@@ -1,0 +1,22 @@
+/* CSS Reset */
+*, *::before, *::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+:root {
+    --gray : rgb(160, 160, 160);
+    --light-gray : #F3F3F3;
+    --soft-lavender: #e1e8f6;
+    --dark-gray: #DCE1E3;
+}
+
+body {
+    background-image: url("https://wallpapercave.com/wp/wp2562160.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
