@@ -2,25 +2,23 @@ import React, {Suspense, useMemo} from 'react';
 import circleImage from '../assets/circle.png';
 import {Canvas, useLoader} from '@react-three/fiber';
 import * as THREE from 'three';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
 const Points = () => {
     const imgTexture = useLoader(THREE.TextureLoader, circleImage);
-	const count = 100
-	const sep = 3 
+	const count = 3000
 
-	let positions = useMemo(() => {
+	const positions = useMemo(() => {
 		let positions = []
-		for(let xi = 0; xi < count; xi++ ){
-			for(let zi = 0; zi < count; zi++ ){
-				let x = sep * (xi - count / 2);
-				let z = sep * (zi - count / 2);
-				let y = 0;
-				positions.push(x, y, z)
-			} 
-		}
-
+        // Position values are randomized from -100 to 100
+        for (let i = 0; i < count; i++) {
+            const x = Math.random() * 200 - 100 ;
+            const y = Math.random() * 300 - 150;
+            const z = Math.random() * 600 - 300;
+            positions.push(x, y, z)
+        }
 		return new Float32Array(positions);
-	}, [count, sep])
+	}, [count])
 
     return (
         <points>
@@ -52,6 +50,8 @@ const Stars = () => {
           camera={{position: [100, 10, 0], fov: 75}}
       >
           <Points />
+          <gridHelper args={[200, 50]} />
+          <OrbitControls/>
       </Canvas>
     )
   }
