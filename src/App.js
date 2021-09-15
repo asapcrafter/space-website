@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {Suspense, useMemo} from 'react';
 import ReactDOM from 'react-dom';
-import * as THREE from 'three';
-import {Canvas} from '@react-three/fiber';
-import circleImg from './assets/circle.png'
+import Stars from './components/Stars.js';
+
+
+
 
 const App = () => {
   return (
-      <div id="canvas-container">
-        <Canvas />
-      </div>
-  );
+		<div id="canvas-container">
+			<Suspense fallback={<div>Loading...</div>}>
+				<Stars/>
+			</Suspense>
+		</div>
+	);
 }
 
 export default App;

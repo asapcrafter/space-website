@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+/* CSS Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#canvas-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+/*# sourceMappingURL=main.css.map */
