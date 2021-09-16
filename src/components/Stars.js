@@ -1,8 +1,7 @@
 import React, {Suspense, useMemo, useRef} from 'react';
 import circleImage from '../assets/circle.png';
-import {Canvas, extend, useFrame, useLoader, useThree} from '@react-three/fiber';
+import {Canvas, extend, useFrame, useLoader, useThree, render} from '@react-three/fiber';
 import * as THREE from 'three';
-import {CubeTextureLoader} from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
 extend({OrbitControls});
@@ -64,20 +63,12 @@ const CameraControls = () => {
 
 const SkyBox = () => {
     const {scene} = useThree();
-    // const loader = new THREE.CubeTextureLoader()
-    // const loaderTwo = new THREE.TextureLoader();
-    // const texture = loader.load([
-    //     '/assets/milkyway.jpg',
-    //     '/assets/milkyway.jpg',
-    //     '/assets/milkyway.jpg',
-    //     '/assets/milkyway.jpg',
-    //     '/assets/milkyway.jpg',
-    //     '/assets/milkyway.jpg',
-    // ]);
 
-    // scene.background = new THREE.TextureLoader()
-    //     .load('/assets/space.jpg')
-    scene.background = new THREE.Color('#21282a')
+    // Dark blue-black background color
+    scene.background = new THREE.Color('#0c0f18')
+
+    // White ambient lighting color
+    // scene.add(new THREE.AmbientLight(0x555555));
     
     return null;
 }
@@ -85,43 +76,65 @@ const SkyBox = () => {
 const Nebula = () => {
     const loader = new THREE.TextureLoader();
     const {scene} = useThree();
+    
+    // Array contains all clouds for later reference
+    let cloudParticles = [];
 
+    // Nebula cloud texture 
     loader.load('/assets/smoke.png', function(texture) {
-        const cloudGeo = new THREE.PlaneBufferGeometry(100, 100);
+        const cloudGeo = new THREE.PlaneBufferGeometry(170, 170);
         const cloudMaterial = new THREE.MeshLambertMaterial({
+            transparent: true,
             map: texture,
-            transparent: true
-        })
-        for (let i= 0; i < 50; i++) {
+        });
+
+        for (let i= 0; i < 40; i++) {
             const cloud = new THREE.Mesh(cloudGeo, cloudMaterial);
-            let cloudParticles = [];
 
             cloud.position.set(
-              Math.random() * 100 - 400,
-              Math.random() * 400 - 200,
-              Math.random() * 1000 - 400,
+            //   Math.random() * 150 - 300, // -300 ~ -150
+              -300 + (i * 3), 
+              Math.random() * 260 - 150, // 200 ~ 350
+              Math.random() * 700 - 300, // -300 ~ 400
             );
-            // cloud.rotation.x = 1.16;
-            cloud.rotation.x = 60;
+
+            cloud.rotation.x = 1.16;
+            // cloud.rotation.x = 2;
             // cloud.rotation.y = -0.12;
-            cloud.rotation.y = 20;
-            cloud.rotation.z = Math.random()*2*Math.PI;
-            cloud.material.opacity = 0.55;
+            cloud.rotation.y = (Math.PI / 180) * 90
+            cloud.rotation.z = Math.random() * 2 * Math.PI;
+
+            cloud.material.opacity = 0.45
+            cloud.renderOrder = 0.5
+            cloud.material.polygonOffset= true
+            cloud.material.polygonOffsetFactor= -4
+            cloud.material.depthTest = false
+
             cloudParticles.push(cloud);
             scene.add(cloud);
-          };
+        };
+    });  
+
+    // Animates cloud rotation
+    useFrame(() => {
+        cloudParticles.forEach(p => p.rotation.z -= 0.0011);
     })
 
-    let orangeLight = new THREE.PointLight(0xcc6600,50,450,1.7);
-    orangeLight.position.set(200,300,100);
+    // Lighting
+    const directionalLight = new THREE.DirectionalLight(0x1e326f);
+    directionalLight.position.set(0,0,1);
+    scene.add(directionalLight);
+
+    const orangeLight = new THREE.PointLight(0x2334a9, 50, 100, 1.7);
+    orangeLight.position.set( -230, 20, 280);
     scene.add(orangeLight);
 
-    let redLight = new THREE.PointLight(0xd8547e,50,450,1.7);
-    redLight.position.set(100,300,100);
+    const redLight = new THREE.PointLight(0x36336a, 30, 100, 1.7);
+    redLight.position.set( -200, 30, -100);
     scene.add(redLight);
 
-    let blueLight = new THREE.PointLight(0x3677ac,50,450,1.7);
-    blueLight.position.set(300,300,200);
+    const blueLight = new THREE.PointLight(0x1a2e69, 40, 100, 1.7);
+    blueLight.position.set( -200, 80, 100);
     scene.add(blueLight);
 
     return null;
@@ -135,7 +148,7 @@ const Stars = () => {
       >
           <CameraControls />
           <Points />
-          <gridHelper args={[200, 50]} />
+          {/* <gridHelper args={[200, 50]} /> */}
           <SkyBox />
           <Nebula />
       </Canvas>
