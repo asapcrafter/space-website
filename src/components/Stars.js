@@ -1,43 +1,45 @@
 import React, {Suspense, useMemo, useRef} from 'react';
 import circleImage from '../assets/circle.png';
-import {Canvas, extend, useFrame, useLoader, useThree, render} from '@react-three/fiber';
+import {Canvas, extend, useFrame, useLoader, useThree} from '@react-three/fiber';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import Twinkle from './Twinkle.js'
 
 extend({OrbitControls});
 
 const Points = () => {
     const imgTexture = useLoader(THREE.TextureLoader, circleImage);
-	const count = 5000
+	const count = 4500
     
 	const positions = useMemo(() => {
+        // Holds all point coordinates
         let positions = []
+        
         // Position values are randomized 
         for (let i = 0; i < count; i++) {
-            const x = Math.random() * 200 - 150 ;
+            const x = Math.random() * 200 - 150;
             const y = Math.random() * 300 - 150;
             const z = Math.random() * 500 - 250;
             positions.push(x, y, z)
         }
 		return new Float32Array(positions);
 	}, [count])
-     
-    const bufferRef = useRef();
-
-    useFrame(() => {
-        const particle = bufferRef.current.array
-        let light = 0
-
-        for (let i = 0; i < particle.length ; i++) {
-            const currentStar = particle[i];
-            light > 0 ? light = 0 : light++ ;
-            currentStar.material.color = new THREE.Color('hsl(255, 100%, " + lightness + "%)');
-        }
+    
+    
+    // useFrame(() => {
+    //     // let light = 0
         
-    })
+    //     // for (let i = 0; i < particle.length ; i++) {
+    //         //     const currentStar = particle[i];
+    //         //     light > 0 ? light = 0 : light++ ;
+    //         //     currentStar.material.color = new THREE.Color('hsl(255, 100%, " + lightness + "%)');
+    //         // }
+    //         props.meshRef.color = new THREE.Color('hsl(255, 100%, " + lightness + "%)');
+    //     });
+        
+        return (
 
-    return (
-        <points>
+            <points>
 			<bufferGeometry attach='geometry'>
 				<bufferAttribute 
 					attachObject={['attributes', 'position']}
@@ -84,6 +86,8 @@ const ScrollCamera = () => {
     return null;
 }
 
+// document.body.onscroll = ScrollCamera
+
 const SkyBox = () => {
     const {scene} = useThree();
     // Dark blue-black background color
@@ -121,10 +125,12 @@ const Nebula = () => {
             rotation.y = (Math.PI / 180) * 90
             rotation.z = Math.random() * 2 * Math.PI;
 
-            material.opacity = 0.45
             material.polygonOffset= true
             material.polygonOffsetFactor= -4
-            material.depthTest = false
+            // material.depthTest = false
+            material.depthWrite = false
+            // material.alphaTest = 0.5
+            material.opacity = 0.45
 
             cloudParticles.push(cloud);
             scene.add(cloud);
@@ -176,6 +182,10 @@ const Stars = () => {
           <SkyBox />
           <Nebula />
           <ScrollCamera />
+          <Twinkle />
+          <Twinkle />
+          <Twinkle />
+          <Twinkle />
       </Canvas>
     )
   }

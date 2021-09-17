@@ -6,6 +6,12 @@
           box-sizing: border-box;
 }
 
+root {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 #canvas-container {
   width: 100vw;
   height: 100vh;
@@ -16,10 +22,8 @@
 }
 
 #home {
-  position: fixed;
-  top: 0;
-  left: 0;
-  line-height: 500px;
+  line-height: 200px;
   width: 100px;
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
