@@ -11,7 +11,7 @@ const Twinkle = () => {
 
     // Nebula cloud texture 
     loader.load('/assets/whitecircle.png', function(texture) {
-        const cloudGeo = new THREE.SphereBufferGeometry(0.13, 6, 6);
+        const cloudGeo = new THREE.SphereBufferGeometry(0.14, 10, 10);
         const cloudMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
 
         for (let i= 0; i < 200; i++) {
@@ -38,25 +38,8 @@ const Twinkle = () => {
 
     useFrame(() => {
         starArray.forEach(p => {
-            // if (p.material.opacity < 0.2) {
-            //     p.material.opacity = 0.95
-            // } else {
-            //     p.material.opacity -= 0.0001
-            // }
-            // currentFrame += 1
-
-            // if (currentFrame % rate === 0) {
-            //     firstState = true
-            // }
-            // if (firstState === true) {
-            //     if (p.material.opacity < 0.01) {
-            //         p.material.opacity = 0.8
-            //         firstState = false
-            //     } else {
-            //         p.material.opacity -= 0.005
-            //     }
-            // }
             const number = Math.random() * 1
+
             if (number < 0.01) {
                 if (p.material.opacity > 0.99) {
                     p.material.opacity = 0.5

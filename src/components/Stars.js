@@ -9,36 +9,23 @@ extend({OrbitControls});
 
 const Points = () => {
     const imgTexture = useLoader(THREE.TextureLoader, circleImage);
-	const count = 4500
+	const count = 3500
     
 	const positions = useMemo(() => {
-        // Holds all point coordinates
         let positions = []
         
         // Position values are randomized 
         for (let i = 0; i < count; i++) {
             const x = Math.random() * 200 - 150;
-            const y = Math.random() * 300 - 150;
+            const y = Math.random() * 320 - 160;
             const z = Math.random() * 500 - 250;
             positions.push(x, y, z)
         }
 		return new Float32Array(positions);
 	}, [count])
     
-    
-    // useFrame(() => {
-    //     // let light = 0
-        
-    //     // for (let i = 0; i < particle.length ; i++) {
-    //         //     const currentStar = particle[i];
-    //         //     light > 0 ? light = 0 : light++ ;
-    //         //     currentStar.material.color = new THREE.Color('hsl(255, 100%, " + lightness + "%)');
-    //         // }
-    //         props.meshRef.color = new THREE.Color('hsl(255, 100%, " + lightness + "%)');
-    //     });
         
         return (
-
             <points>
 			<bufferGeometry attach='geometry'>
 				<bufferAttribute 
@@ -79,14 +66,39 @@ const CameraControls = () => {
 
 const ScrollCamera = () => {
     const {camera} = useThree()
-    const t = document.body.getBoundingClientRect().top;
+    
+    let position = 0
+    let initialPosition = 0
+    let finalPosition 
+    let deltaPosition
+    let speed = 0
+    
+    window.addEventListener('scroll', (e) => {
+        const scrollDistance = document.body.getBoundingClientRect().top;
 
-    camera.position.y = t * -0.01;
+        finalPosition = scrollDistance
+        deltaPosition = (finalPosition - initialPosition)
+        speed += (deltaPosition * 0.0005)
+        console.log(speed)
+        
+        if (initialPosition !== finalPosition) {
+            initialPosition = scrollDistance
+        }
+    })
+
+    const raf = () => {
+        position += speed
+        speed *= 0.95
+        camera.position.y = position
+        window.requestAnimationFrame(raf)
+    }
+    
+    
+    raf();
 
     return null;
 }
 
-// document.body.onscroll = ScrollCamera
 
 const SkyBox = () => {
     const {scene} = useThree();
@@ -103,15 +115,14 @@ const Nebula = () => {
     // Array contains all clouds for later reference
     let cloudParticles = [];
 
-    // Nebula cloud texture 
     loader.load('/assets/smoke.png', function(texture) {
-        const cloudGeo = new THREE.PlaneBufferGeometry(220, 220);
+        const cloudGeo = new THREE.PlaneBufferGeometry(200, 200);
         const cloudMaterial = new THREE.MeshLambertMaterial({
             transparent: true,
             map: texture,
         });
 
-        for (let i= 0; i < 35; i++) {
+        for (let i= 0; i < 50; i++) {
             const cloud = new THREE.Mesh(cloudGeo, cloudMaterial);
             const {rotation, material} = cloud;
 
@@ -127,10 +138,10 @@ const Nebula = () => {
 
             material.polygonOffset= true
             material.polygonOffsetFactor= -4
-            // material.depthTest = false
+            material.depthTest = false
             material.depthWrite = false
             // material.alphaTest = 0.5
-            material.opacity = 0.45
+            material.opacity = 0.7
 
             cloudParticles.push(cloud);
             scene.add(cloud);
@@ -139,19 +150,19 @@ const Nebula = () => {
 
     // Animation for cloud rotation
     useFrame(() => {
-        cloudParticles.forEach(p => p.rotation.z -= 0.0015);
+        cloudParticles.forEach(p => p.rotation.z -= 0.0016);
     })
 
     // Lighting
-    const directionalLight = new THREE.DirectionalLight(0x0c0f18);
-    directionalLight.position.set(-220, 0, 10);
-    scene.add(directionalLight);
+    // const directionalLight = new THREE.DirectionalLight(0x0c0f18);
+    // directionalLight.position.set(-220, 0, -10);
+    // scene.add(directionalLight);
 
     const orangeLight = new THREE.PointLight(0x2334a9, 5, 100, 1.7);
     orangeLight.position.set( -210, 20, 250);
     scene.add(orangeLight);
 
-    const redLight = new THREE.PointLight(0x36336a, 5, 120, 1.7);
+    const redLight = new THREE.PointLight(0x36336a, 10, 120, 1.7);
     redLight.position.set( -210, 30, -180);
     scene.add(redLight);
 
@@ -163,7 +174,7 @@ const Nebula = () => {
     fourLight.position.set( -210, 80, 350);
     scene.add(fourLight);
 
-    const fiveLight = new THREE.PointLight(0x353267, 5, 50, 1.7);
+    const fiveLight = new THREE.PointLight(0x353267, 5, 70, 1.7);
     fiveLight.position.set( -210, 100, -120);
     scene.add(fiveLight);
 
@@ -176,13 +187,12 @@ const Stars = () => {
           colorManagement={false}
           camera={{position: [100, 10, 0], fov: 75}}
       >
-          <CameraControls />
+          {/* <CameraControls /> */}
           <Points />
           {/* <gridHelper args={[200, 50]} /> */}
           <SkyBox />
           <Nebula />
           <ScrollCamera />
-          <Twinkle />
           <Twinkle />
           <Twinkle />
           <Twinkle />

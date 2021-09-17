@@ -13,25 +13,27 @@
   }
 
 root {
-  position: fixed;
-  top: 0;
-  left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
-  #canvas-container {
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+#canvas-container {
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
 
-  #home {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    line-height: 200px;
-    width: 100px;
-    height: 100%;
-  }
+#home {
+	position: relative;
+	line-height: 200px;
+	// width: 100px;
+	height: 100%;
+	font-size: 50px;
+	color: white;
+	z-index: 99;
+}

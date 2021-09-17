@@ -19,11 +19,15 @@ root {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 #home {
+  position: relative;
   line-height: 200px;
-  width: 100px;
   height: 100%;
+  font-size: 50px;
+  color: white;
+  z-index: 99;
 }
 /*# sourceMappingURL=main.css.map */
