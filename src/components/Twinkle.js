@@ -1,24 +1,23 @@
-import React from 'react';
 import * as THREE from 'three';
-import {Canvas, extend, useFrame, useLoader, useThree} from '@react-three/fiber';
+import {useFrame, useThree} from '@react-three/fiber';
 
 const Twinkle = () => {
     const loader = new THREE.TextureLoader();
     const {scene} = useThree();
     
-    // Array contains all clouds for later reference
+    // Array contains all stars for later reference
     let starArray = [];
 
-    // Nebula cloud texture 
+    // Star material
     loader.load('/assets/whitecircle.png', function(texture) {
-        const cloudGeo = new THREE.SphereBufferGeometry(0.14, 10, 10);
-        const cloudMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
+        const starGeo = new THREE.SphereBufferGeometry(0.15, 5, 5);
+        const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
 
-        for (let i= 0; i < 200; i++) {
-            const cloud = new THREE.Mesh(cloudGeo, cloudMaterial);
-            const {rotation, material} = cloud;
+        for (let i= 0; i < 300; i++) {
+            const star = new THREE.Mesh(starGeo, starMaterial);
+            const {rotation, material} = star;
 
-            cloud.position.set(
+            star.position.set(
                 Math.random() * 200 - 150,
                 Math.random() * 300 - 150,
                 Math.random() * 500 - 250,
@@ -31,8 +30,8 @@ const Twinkle = () => {
             material.transparent = true
             material.opacity = Math.random() * 1
 
-            starArray.push(cloud);
-            scene.add(cloud);
+            starArray.push(star);
+            scene.add(star);
         };
     });  
 
@@ -42,16 +41,16 @@ const Twinkle = () => {
 
             if (number < 0.01) {
                 if (p.material.opacity > 0.99) {
-                    p.material.opacity = 0.5
+                    p.material.opacity = 0.4
                 } else {
-                    p.material.opacity += 0.005
+                    p.material.opacity += 0.0025
                 }
                 }
         })
         
     })
 
-    return null
+    return null;
 }
 
 export default Twinkle;
