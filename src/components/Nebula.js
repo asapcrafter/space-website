@@ -8,7 +8,7 @@ const Nebula = () => {
     // Array contains all clouds for later reference
     let cloudParticles = [];
 
-    loader.load('/assets/smoke.png', function(texture) {
+    loader.load('./assets/smoke.png', function(texture) {
         const cloudGeo = new THREE.PlaneBufferGeometry(200, 200);
         const cloudMaterial = new THREE.MeshLambertMaterial({
             transparent: true,
@@ -31,7 +31,7 @@ const Nebula = () => {
 
             material.polygonOffset= true
             material.polygonOffsetFactor= -4
-            material.depthTest = false
+            // material.depthTest = false
             material.depthWrite = false
             // material.alphaTest = 0.5
             material.opacity = 0.7

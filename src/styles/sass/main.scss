@@ -2,8 +2,10 @@
     @return ($value / 16) * 1rem;
   }
 
-
-
+@font-face {
+	font-family: space-grotesk;
+	src: url(../../assets/SpaceGrotesk.ttf)
+}
   /* CSS Reset */
 *, *::before, *::after { 
     margin: 0;
@@ -20,7 +22,7 @@ root {
 
 #canvas-container {
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	background-color: black;
 	position: fixed;
 	top: 0;
@@ -28,12 +30,11 @@ root {
 	z-index: 1;
 }
 
-#home {
+#body {
 	position: relative;
 	line-height: 500px;
-	// width: 100px;
 	height: 100%;
-	font-size: 20px;
+	font-family: space-grotesk;
 	color: white;
 	z-index: 99;
 }

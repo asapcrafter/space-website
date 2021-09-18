@@ -5,11 +5,11 @@ const Twinkle = () => {
     const loader = new THREE.TextureLoader();
     const {scene} = useThree();
     
-    // Array contains all stars for later reference
+    // Array stores all stars for reference in animation frame
     let starArray = [];
 
-    // Star material
-    loader.load('/assets/whitecircle.png', function(texture) {
+    // Loads star object into the scene
+    loader.load('./assets/whitecircle.png', function(texture) {
         const starGeo = new THREE.SphereBufferGeometry(0.15, 5, 5);
         const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
 
@@ -45,9 +45,8 @@ const Twinkle = () => {
                 } else {
                     p.material.opacity += 0.0025
                 }
-                }
-        })
-        
+            }
+        });
     })
 
     return null;
