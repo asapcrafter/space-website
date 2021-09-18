@@ -86,19 +86,55 @@ const ScrollCamera = () => {
     return null;
 }
 
+// Parallax scrolling effect
 const MouseCamera = () => {
     const {camera} = useThree()
+
+    let positionX = 0
+    let initialX = 0
+    let finalX = 0
+    let deltaX = 0
+    let inertiaX = 0
+
+    let positionY = 0
+    let initialY = 0
+    let finalY = 0
+    let deltaY = 0
+    let inertiaY = 0
 
     document.addEventListener('mousemove', (e) => {
         const centerX = window.innerWidth * 0.5;
         const centerY = window.innerHeight * 0.5;
 
         // Controls side-to-side movement
-        camera.position.z = (e.clientX - centerX) * 0.003 
+        finalX = e.clientX
+        deltaX = (finalX - initialX)
+        inertiaX += deltaX * 0.0002
 
+        if (initialX !== finalX) initialX = e.clientX;
+        
+        
         // Controls inward-outward movement
-        camera.position.x = (e.clientY - centerY) * 0.005 + 90
+        finalY = e.clientY
+        deltaY = (finalY - initialY)
+        inertiaY += deltaY * 0.00025
+
+        if (initialY !== finalY) initialY = e.clientY
     })
+    
+    const raf = () => {
+        positionX += inertiaX
+        inertiaX *= 0.954321
+        camera.position.z = positionX 
+        
+        positionY += inertiaY
+        inertiaY *= 0.954321
+        camera.position.x = positionY + 90
+
+        window.requestAnimationFrame(raf)
+    }
+
+    raf();
 
     return null;
 }
