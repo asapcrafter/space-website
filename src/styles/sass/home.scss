@@ -1,0 +1,48 @@
+@function rem($value) {
+    @return ($value / 16) * 1rem;
+  }
+
+@font-face {
+	font-family: space-grotesk;
+	src: url(../../assets/SpaceGrotesk.ttf)
+}
+
+@font-face {
+	font-family: futura;
+	src: url(../../assets/FuturaStdBook.ttf)
+}
+
+@font-face {
+	font-family: futura-thin;
+	src: url(../../assets/FuturaThin.ttf)
+}
+
+$space-blue: #668a93;
+
+#intro-wrapper {
+    margin-top: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: futura-thin;
+    #intro-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        #intro-h1 {
+            font-size: calc(30px + 4.5vw);
+            letter-spacing: 2vw;
+        }
+        #intro-p {
+            margin-top: 0.2vw;
+            font-size: calc(10px + 1.2vw);
+            letter-spacing: 8px;
+        }
+        #intro-button-container {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+    }
+}

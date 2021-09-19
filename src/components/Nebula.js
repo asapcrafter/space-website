@@ -1,5 +1,6 @@
 import {useFrame, useThree} from '@react-three/fiber';
 import * as THREE from 'three';
+import smoke from '../assets/smoke.png';
 
 const Nebula = () => {
     const loader = new THREE.TextureLoader();
@@ -7,8 +8,9 @@ const Nebula = () => {
     
     // Array contains all clouds for later reference
     let cloudParticles = [];
+    console.log('Nebula loaded')
 
-    loader.load('./assets/smoke.png', function(texture) {
+    loader.load(smoke, function(texture) {
         const cloudGeo = new THREE.PlaneBufferGeometry(200, 200);
         const cloudMaterial = new THREE.MeshLambertMaterial({
             transparent: true,

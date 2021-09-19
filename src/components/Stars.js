@@ -11,7 +11,7 @@ extend({OrbitControls});
 // Renders non-animated star objects in the scene
 const Points = () => {
     const imgTexture = useLoader(THREE.TextureLoader, circleImage);
-	const count = 1500
+	const count = 1000
     
 	const positions = useMemo(() => {
         let positions = []
@@ -46,6 +46,22 @@ const Points = () => {
 				opacity={1.0}
 			/>
 		</points>
+    );
+}
+
+const CameraControls = () => {
+    const {camera, gl: {domElement},} = useThree()
+    const controls = useRef();
+
+    useFrame(() => controls.current.update());
+
+    return (
+        <orbitControls
+            ref={controls}
+            args={[camera, domElement]}
+            autoRotate={false}
+            enableZoom={false}
+        />
     );
 }
 
@@ -103,23 +119,23 @@ const MouseCamera = () => {
     let inertiaY = 0
 
     document.addEventListener('mousemove', (e) => {
-        const centerX = window.innerWidth * 0.5;
-        const centerY = window.innerHeight * 0.5;
-
         // Controls side-to-side movement
         finalX = e.clientX
         deltaX = (finalX - initialX)
         inertiaX += deltaX * 0.0002
 
-        if (initialX !== finalX) initialX = e.clientX;
-        
+        if (initialX !== finalX) {
+            initialX = e.clientX;
+        }
         
         // Controls inward-outward movement
         finalY = e.clientY
         deltaY = (finalY - initialY)
         inertiaY += deltaY * 0.00025
 
-        if (initialY !== finalY) initialY = e.clientY
+        if (initialY !== finalY) {
+            initialY = e.clientY
+        }
     })
     
     const raf = () => {
@@ -159,6 +175,7 @@ const Stars = () => {
           <Twinkle />
           <Twinkle />
           <Twinkle />
+          {/* <CameraControls /> */}
           <ScrollCamera />
           <MouseCamera />
       </Canvas>

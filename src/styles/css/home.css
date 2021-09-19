@@ -1,0 +1,65 @@
+@font-face {
+  font-family: space-grotesk;
+  src: url(../../assets/SpaceGrotesk.ttf);
+}
+
+@font-face {
+  font-family: futura;
+  src: url(../../assets/FuturaStdBook.ttf);
+}
+
+@font-face {
+  font-family: futura-thin;
+  src: url(../../assets/FuturaThin.ttf);
+}
+
+#intro-wrapper {
+  margin-top: 35vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: futura-thin;
+}
+
+#intro-wrapper #intro-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#intro-wrapper #intro-container #intro-h1 {
+  font-size: calc(30px + 4.5vw);
+  letter-spacing: 2vw;
+}
+
+#intro-wrapper #intro-container #intro-p {
+  margin-top: 0.2vw;
+  font-size: calc(10px + 1.2vw);
+  letter-spacing: 8px;
+}
+
+#intro-wrapper #intro-container #intro-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=home.css.map */

@@ -6,6 +6,16 @@
 	font-family: space-grotesk;
 	src: url(../../assets/SpaceGrotesk.ttf)
 }
+
+@font-face {
+	font-family: futura;
+	src: url(../../assets/FuturaStdBook.ttf)
+}
+
+@font-face {
+	font-family: futura-thin;
+	src: url(../../assets/FuturaThin.ttf)
+}
   /* CSS Reset */
 *, *::before, *::after { 
     margin: 0;
@@ -18,6 +28,7 @@ root {
 	position: fixed;
 	top: 0;
 	left: 0;
+	user-select: none;
 }
 
 #canvas-container {
@@ -32,9 +43,9 @@ root {
 
 #body {
 	position: relative;
-	line-height: 500px;
 	height: 100%;
-	font-family: space-grotesk;
+	font-family: futura;
 	color: white;
 	z-index: 99;
+	user-select: none;
 }

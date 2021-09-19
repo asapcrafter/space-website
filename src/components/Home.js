@@ -1,12 +1,17 @@
 import React from 'react';
+import '../styles/css/home.css'
 
 const Home = () => {
     return (
         <div id='body'>
             <div id="intro-wrapper">
                 <div id="intro-container">
-                    hi
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint deleniti nobis architecto in minus temporibus quod asperiores fugit sunt illum consectetur alias magnam, sit molestias quia nostrum, voluptas excepturi molestiae adipisci nulla? Modi, doloremque non. Accusamus, eligendi! Ut repellendus doloremque eligendi corrupti repellat temporibus reiciendis?
+                    <div id="intro-h1">STEPHEN TRIEU</div>
+                    <div id="intro-p"> WEB DEVELOPER | DESIGNER</ div>
+                    <div id="intro-button-container">
+                        <div id="intro-button-work">WORK</div>
+                        <div id="intro-button-about">ABOUT</div> 
+                    </div>
                 </div>
             </div>
         </div>
