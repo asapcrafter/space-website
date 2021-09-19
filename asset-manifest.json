@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/space-website/static/css/main.beaa9f2c.chunk.css",
-    "main.js": "/space-website/static/js/main.6331e3d2.chunk.js",
-    "main.js.map": "/space-website/static/js/main.6331e3d2.chunk.js.map",
+    "main.js": "/space-website/static/js/main.546953cd.chunk.js",
+    "main.js.map": "/space-website/static/js/main.546953cd.chunk.js.map",
     "runtime-main.js": "/space-website/static/js/runtime-main.389cbdfc.js",
     "runtime-main.js.map": "/space-website/static/js/runtime-main.389cbdfc.js.map",
-    "static/js/2.3c7bfddf.chunk.js": "/space-website/static/js/2.3c7bfddf.chunk.js",
-    "static/js/2.3c7bfddf.chunk.js.map": "/space-website/static/js/2.3c7bfddf.chunk.js.map",
+    "static/js/2.63ca75a6.chunk.js": "/space-website/static/js/2.63ca75a6.chunk.js",
+    "static/js/2.63ca75a6.chunk.js.map": "/space-website/static/js/2.63ca75a6.chunk.js.map",
     "index.html": "/space-website/index.html",
     "static/css/main.beaa9f2c.chunk.css.map": "/space-website/static/css/main.beaa9f2c.chunk.css.map",
-    "static/js/2.3c7bfddf.chunk.js.LICENSE.txt": "/space-website/static/js/2.3c7bfddf.chunk.js.LICENSE.txt",
+    "static/js/2.63ca75a6.chunk.js.LICENSE.txt": "/space-website/static/js/2.63ca75a6.chunk.js.LICENSE.txt",
     "static/media/home.css": "/space-website/static/media/SpaceGrotesk.0ab039e3.ttf",
     "static/media/smoke.7c256a05.png": "/space-website/static/media/smoke.7c256a05.png"
   },
   "entrypoints": [
     "static/js/runtime-main.389cbdfc.js",
-    "static/js/2.3c7bfddf.chunk.js",
+    "static/js/2.63ca75a6.chunk.js",
     "static/css/main.beaa9f2c.chunk.css",
-    "static/js/main.6331e3d2.chunk.js"
+    "static/js/main.546953cd.chunk.js"
   ]
 }
