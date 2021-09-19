@@ -40,9 +40,13 @@ $space-blue: #668a93;
             letter-spacing: 8px;
         }
         #intro-button-container {
+            margin-top: 0.3vw;
             display: flex;
             flex-flow: row nowrap;
             justify-content: center;
+            #intro-button-about {
+                margin-left: 10px
+            }
         }
     }
 }

@@ -175,6 +175,7 @@ const Stars = () => {
           <Twinkle />
           <Twinkle />
           <Twinkle />
+          <Twinkle />
           {/* <CameraControls /> */}
           <ScrollCamera />
           <MouseCamera />

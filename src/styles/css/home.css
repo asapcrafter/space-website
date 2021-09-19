@@ -51,6 +51,7 @@
 }
 
 #intro-wrapper #intro-container #intro-button-container {
+  margin-top: 0.3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,5 +62,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-about {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=home.css.map */
