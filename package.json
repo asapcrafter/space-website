@@ -2,7 +2,7 @@
   "name": "space-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://asapcrafter.github.io/space-website",
+  "homepage": "http://www.stephentrieu.com/",
   "dependencies": {
     "@react-three/fiber": "^7.0.6",
     "@testing-library/jest-dom": "^5.14.1",

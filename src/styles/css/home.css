@@ -51,7 +51,7 @@
 }
 
 #intro-wrapper #intro-container #intro-button-container {
-  margin-top: 0.3vw;
+  margin-top: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,9 +62,69 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: calc(10px + 1vw);
+  letter-spacing: 4px;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-work {
+  display: inline-block;
+  position: relative;
+  margin-left: calc(40px + 6vw);
+  padding-bottom: 5px;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-work:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-work:after {
+  content: '';
+  position: absolute;
+  width: 97.5%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 #intro-wrapper #intro-container #intro-button-container #intro-button-about {
-  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-about:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+#intro-wrapper #intro-container #intro-button-container #intro-button-about:after {
+  content: '';
+  position: absolute;
+  width: 97.5%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 /*# sourceMappingURL=home.css.map */

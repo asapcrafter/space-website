@@ -122,7 +122,7 @@ const MouseCamera = () => {
         // Controls side-to-side movement
         finalX = e.clientX
         deltaX = (finalX - initialX)
-        inertiaX += deltaX * 0.0002
+        inertiaX += deltaX * 0.0004
 
         if (initialX !== finalX) {
             initialX = e.clientX;
@@ -131,7 +131,7 @@ const MouseCamera = () => {
         // Controls inward-outward movement
         finalY = e.clientY
         deltaY = (finalY - initialY)
-        inertiaY += deltaY * 0.00025
+        inertiaY += deltaY * 0.00045
 
         if (initialY !== finalY) {
             initialY = e.clientY

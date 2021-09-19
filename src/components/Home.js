@@ -9,8 +9,8 @@ const Home = () => {
                     <div id="intro-h1">STEPHEN TRIEU</div>
                     <div id="intro-p"> WEB DEVELOPER | DESIGNER</ div>
                     <div id="intro-button-container">
-                        <div id="intro-button-work">WORK</div>
-                        <div id="intro-button-about">ABOUT</div> 
+                        <p id="intro-button-about">ABOUT</p> 
+                        <p id="intro-button-work">WORK</p>
                     </div>
                 </div>
             </div>

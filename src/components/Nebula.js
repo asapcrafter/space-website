@@ -51,21 +51,24 @@ const Nebula = () => {
     orangeLight.position.set( -210, 20, 250);
     scene.add(orangeLight);
 
-    const redLight = new THREE.PointLight(0x36336a, 10, 120, 1.7);
-    redLight.position.set( -210, 30, -180);
-    scene.add(redLight);
+    const darkPurple = new THREE.PointLight(0x36336a, 10, 120, 1.7); 
+    darkPurple.position.set( -210, 30, -180);
+    scene.add(darkPurple);
 
     const blueLight = new THREE.PointLight(0x1a2e69, 5, 120, 1.7);
     blueLight.position.set( -210, -20, 50);
     scene.add(blueLight);
 
-    const fourLight = new THREE.PointLight(0x353267, 5, 100, 1.7);
+    const fourLight = new THREE.PointLight(0x353267, 5, 70, 1.7);
     fourLight.position.set( -210, 80, 350);
     scene.add(fourLight);
 
     const fiveLight = new THREE.PointLight(0x353267, 5, 70, 1.7);
     fiveLight.position.set( -210, 100, -120);
     scene.add(fiveLight);
+
+    const ambientLight = new THREE.AmbientLight(0x213371, 0.00005)
+    scene.add(ambientLight);
 
     return null;
 }
