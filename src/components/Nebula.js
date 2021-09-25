@@ -16,10 +16,10 @@ const Nebula = () => {
             transparent: true,
             map: texture,
         });
+        const cloud = new THREE.Mesh(cloudGeo, cloudMaterial);
+        const {rotation, material} = cloud;
 
         for (let i= 0; i < 50; i++) {
-            const cloud = new THREE.Mesh(cloudGeo, cloudMaterial);
-            const {rotation, material} = cloud;
 
             cloud.position.set(
               -250 + (i * 0.5), 

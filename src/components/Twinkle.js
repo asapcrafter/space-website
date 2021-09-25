@@ -6,27 +6,27 @@ const Twinkle = () => {
     
     // Array stores all stars for reference in animation frame
     let starArray = [];
-
+    
+    const starGeo = new THREE.SphereBufferGeometry(0.15, 5, 5);
+    const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
+    
     // Loads star object into the scene
-    const loadStars = () => {
-        const starGeo = new THREE.SphereBufferGeometry(0.15, 5, 5);
-        const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff})
-        
+    const loadStars = () => {     
         for (let i= 0; i < 300; i++) {
             const star = new THREE.Mesh(starGeo, starMaterial);
             const {rotation, material} = star;
-
+            
+            rotation.x = 1.16
+            rotation.y = (Math.PI / 180) * 90
+            
             star.position.set(
                 Math.random() * 200 - 150,
                 Math.random() * 300 - 150,
                 Math.random() * 500 - 250,
             );
-
-            material.transparent = true
+            
             material.opacity = Math.random() * 1
-
-            rotation.x = 1.16
-            rotation.y = (Math.PI / 180) * 90
+            material.transparent = true
             rotation.z = Math.random() * 2 * Math.PI
 
             starArray.push(star);
