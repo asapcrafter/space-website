@@ -17,7 +17,7 @@ extend({ OrbitControls })
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 500
+	const count = 700
 
 	const positions = useMemo(() => {
 		let positions = []
@@ -85,7 +85,6 @@ const ScrollCamera = () => {
 
 	window.addEventListener('scroll', e => {
 		const scrollDistance = document.body.getBoundingClientRect().top
-
 		finalPosition = scrollDistance
 
 		// Returns how many pixels were scrolled
@@ -167,28 +166,32 @@ const MouseCamera = () => {
 // Adds a dark blue-black background color
 const SkyBox = () => {
 	const { scene } = useThree()
-	// scene.background = new THREE.Color('#0c0f18')
+	scene.background = new THREE.Color('#0c0f18')
+
 	const loader = new THREE.TextureLoader()
-	scene.background = loader.load(
-		'../assets/space-background.jpg',
-		function (texture) {
-			const img = texture.width
-		}
-	)
+	loader.load('../assets/space-background.jpg', function (texture) {
+		const geo = new THREE.PlaneBufferGeometry(300, 300)
+		const material = new THREE.MeshBasicMaterial({
+			// transparent: true,
+			// map: texture,
+		})
+		const background = new THREE.Mesh(geo, material)
+		background.position.set(-300, 10, 100)
+		scene.add(background)
+	})
 
 	return null
 }
 
 const Stars = () => {
 	return (
-		<Canvas colorManagement={true} camera={{ position: [100, 10, 0], fov: 75 }}>
-			{/* <Nebula />
-			<Points /> */}
+		<Canvas colorManagement={true} camera={{ position: [100, 10, 0], fov: 80 }}>
+			<Nebula />
+			<Points />
 			<SkyBox />
-			{/* <Twinkle />
 			<Twinkle />
 			<Twinkle />
-			<Twinkle /> */}
+			<Twinkle />
 			{/* <CameraControls /> */}
 			<ScrollCamera />
 			<MouseCamera />
