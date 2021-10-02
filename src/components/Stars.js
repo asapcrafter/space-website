@@ -55,7 +55,7 @@ const Points = () => {
 	)
 }
 
-const CameraControls = () => {
+const DebugCamera = () => {
 	const {
 		camera,
 		gl: { domElement },
@@ -192,7 +192,7 @@ const Stars = () => {
 			<Twinkle />
 			<Twinkle />
 			<Twinkle />
-			{/* <CameraControls /> */}
+			<DebugCamera />
 			<ScrollCamera />
 			<MouseCamera />
 		</Canvas>

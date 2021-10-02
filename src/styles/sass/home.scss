@@ -37,6 +37,10 @@ $space-blue: #668a93;
     transform-origin: bottom left;
 }
 
+@mixin mediumText {
+    font-size: calc(10px + 1vw);
+}
+
 #intro-wrapper {
     margin-top: 35vh;
     width: 100%;
@@ -87,6 +91,45 @@ $space-blue: #668a93;
                 }
             }
             
+        }
+    }
+}
+
+#about-wrapper {
+    margin-top: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: futura-thin;
+    #about-container {
+        #about-p {
+
+        }
+        #about-tools {
+            @include mediumText;
+            text-align: center;
+        }
+        #about-tools-container {
+            margin-top: 5vh;
+            display: flex;
+            flex-flow: row nowrap;
+            column-gap: 7vw;
+            justify-content: center;
+        }
+        .about-tech-container {
+            display: flex;
+            // justify-content: center;
+            flex-flow: column nowrap;
+            .about-tech-title {
+                
+            }
+            .about-tech-content {
+                margin-top: 4px;
+                height: 10vh;
+                justify-content: space-between;
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }

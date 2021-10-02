@@ -5,10 +5,10 @@ import smoke from '../assets/smoke.png'
 const Nebula = () => {
 	const loader = new THREE.TextureLoader()
 	const { scene } = useThree()
-
-	// Array contains all clouds for later reference
-	let cloudParticles = []
 	console.log('Nebula loaded')
+
+	// Array stores all clouds for later reference
+	let cloudParticles = []
 
 	loader.load(smoke, function (texture) {
 		const cloudGeo = new THREE.PlaneBufferGeometry(200, 200)
@@ -21,7 +21,7 @@ const Nebula = () => {
 			const cloud = new THREE.Mesh(cloudGeo, cloudMaterial)
 			const { rotation, material } = cloud
 			cloud.position.set(
-				-250 + i * 0.5,
+				-250 + i * 0.5, // -250 ~ -220
 				Math.random() * 260 - 150, // 200 ~ 350
 				Math.random() * 700 - 380 // -300 ~ 400
 			)

@@ -52,5 +52,6 @@ root {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-size: calc(10px + 0.75vw);
 }
 /*# sourceMappingURL=main.css.map */
