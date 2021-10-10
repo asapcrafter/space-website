@@ -129,7 +129,7 @@
 }
 
 #about-wrapper {
-  margin-top: 40vh;
+  margin-top: 50vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,6 +138,32 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-family: futura-thin;
+}
+
+#about-wrapper #about-container #about-title {
+  font-size: calc(15px + 1.2vw);
+  letter-spacing: 3px;
+  border-bottom: solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#about-wrapper #about-container #about-p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: calc(10px + 1vw);
+  width: 65vw;
+  max-width: 700px;
+  gap: 1vh;
+  line-height: 34px;
 }
 
 #about-wrapper #about-container #about-tools {

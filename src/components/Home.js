@@ -16,9 +16,16 @@ const Home = () => {
 			</div>
 			<div id='about-wrapper'>
 				<div id='about-container'>
+					<div id='about-title'>ABOUT</div>
 					<div id='about-p'>
-						Full-stack developer with a passion for designing polished and
-						beautiful applications.
+						<p>Welcome to my portfolio.</p>
+						<p>
+							I am a web developer developer with a passion for designing
+							polished and beautiful applications. My focus is in desktop
+							responsive websites using JavaScript, SASS/CSS, React, and Node.
+							On top of the basic technologies, I love to constantly experiment
+							in new fields such as 3D graphics using WebGL and ThreeJS.
+						</p>
 					</div>
 					<div id='about-tools'>TOOLS</div>
 					<div id='about-tools-container'>

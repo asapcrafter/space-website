@@ -185,14 +185,14 @@ const SkyBox = () => {
 
 const Stars = () => {
 	return (
-		<Canvas colorManagement={true} camera={{ position: [100, 10, 0], fov: 80 }}>
+		<Canvas colorManagement={true} camera={{ position: [100, 5, 7], fov: 80 }}>
 			<Nebula />
 			<Points />
 			<SkyBox />
 			<Twinkle />
 			<Twinkle />
 			<Twinkle />
-			<DebugCamera />
+			{/* <DebugCamera /> */}
 			<ScrollCamera />
 			<MouseCamera />
 		</Canvas>

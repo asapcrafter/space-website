@@ -96,14 +96,28 @@ $space-blue: #668a93;
 }
 
 #about-wrapper {
-    margin-top: 40vh;
+    margin-top: 50vh;
     width: 100%;
     display: flex;
     justify-content: center;
     font-family: futura-thin;
     #about-container {
+        #about-title {
+            font-size: calc(15px + 1.2vw);
+            letter-spacing: 3px;
+            border-bottom: solid black;
+            padding-left: 8px;
+            padding-right: 8px;
+            width: fit-content;
+        }
         #about-p {
-
+            display: flex;
+            flex-direction: column;
+            @include mediumText;
+            width: 65vw;
+            max-width: 700px;
+            gap: 1vh;
+            line-height: 34px;
         }
         #about-tools {
             @include mediumText;
