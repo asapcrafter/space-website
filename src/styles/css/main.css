@@ -21,6 +21,11 @@
           box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 root {
   position: fixed;
   top: 0;
@@ -53,5 +58,6 @@ root {
       -ms-user-select: none;
           user-select: none;
   font-size: calc(10px + 0.75vw);
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=main.css.map */

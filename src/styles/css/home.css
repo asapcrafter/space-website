@@ -152,6 +152,9 @@
 }
 
 #about-wrapper #about-container #about-p {
+  font-family: arial;
+  font-size: calc(12px + 0.5vw);
+  margin-top: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,9 +162,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: calc(10px + 1vw);
   width: 65vw;
-  max-width: 700px;
+  max-width: 800px;
   gap: 1vh;
   line-height: 34px;
 }

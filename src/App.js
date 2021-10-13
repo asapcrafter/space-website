@@ -1,5 +1,4 @@
-import React, {Suspense, useMemo} from 'react';
-import ReactDOM from 'react-dom';
+import React, {Suspense} from 'react';
 import Stars from './components/Stars.js';
 
 const App = () => {

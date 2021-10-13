@@ -24,6 +24,11 @@
     box-sizing: border-box;
   }
 
+  a {
+	  text-decoration: none;
+	  color: white;
+  }
+
 root {
 	position: fixed;
 	top: 0;
@@ -49,5 +54,6 @@ root {
 	color: white;
 	z-index: 99;
 	user-select: none;
-	font-size: calc(10px + 0.75vw)
+	font-size: calc(10px + 0.75vw);
+	scroll-behavior: smooth;
 }
