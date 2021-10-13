@@ -11,6 +11,21 @@ const Home = () => {
 		});
 	}
 
+	// Scrolls to the Work section on-click
+	const handleScrollWork = () => {
+		document.getElementById('work-title').scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+			inline: 'nearest'
+		});
+	}
+
+	// window.onbeforeunload = function () {
+	// 	window.scrollTo(0, 0);
+	//   }
+	window.onbeforeunload = setTimeout(window.scrollTo(0, 0), 5000)
+
+
 	return (
 		<div id='body'>
 			<div id='intro-wrapper'>
@@ -19,7 +34,7 @@ const Home = () => {
 					<div id='intro-p'> WEB DEVELOPER | DESIGNER</div>
 					<div id='intro-button-container'>
 						<div id='intro-button-about' href='#about-title' onClick={handleScrollAbout}>ABOUT</div>
-						<a id='intro-button-work'>WORK</a>
+						<div id='intro-button-work' onClick={handleScrollWork}>WORK</div>
 					</div>
 				</div>
 			</div>
@@ -29,11 +44,11 @@ const Home = () => {
 					<div id='about-p'>
 						<p>Welcome to my portfolio.</p>
 						<p>
-							I am a web developer developer with a passion for designing
+							I am a web developer with a passion for designing
 							polished and beautiful applications. My focus is in desktop
 							responsive websites using JavaScript, SASS/CSS, React, and Node.
-							On top of the basic technologies, I love to constantly experiment
-							in new fields such as 3D graphics using WebGL and ThreeJS.
+							On top of the basic technologies, I love to  experiment
+							in new areas such as 3D graphics using WebGL and ThreeJS.
 						</p>
 					</div>
 					<div id='about-tools'>TOOLS</div>
@@ -66,12 +81,16 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
+					<div id="work-wrapper">
+						<div id="work-container">
+							<div id="work-title">WORK</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id="footer-wrapper">
 				<div id="footer-container"></div>
 			</div>
-
 		</div>
 	)
 }

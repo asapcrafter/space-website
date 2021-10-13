@@ -144,8 +144,8 @@
   font-size: calc(15px + 1.2vw);
   letter-spacing: 3px;
   border-bottom: solid black;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 6px;
+  padding-right: 6px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -154,7 +154,10 @@
 #about-wrapper #about-container #about-p {
   font-family: arial;
   font-size: calc(12px + 0.5vw);
-  margin-top: 25px;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
+  font-weight: 100;
+  margin-top: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,10 +174,11 @@
 #about-wrapper #about-container #about-tools {
   font-size: calc(10px + 1vw);
   text-align: center;
+  margin-top: 150px;
 }
 
 #about-wrapper #about-container #about-tools-container {
-  margin-top: 5vh;
+  margin-top: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,5 +216,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#footer-wrapper {
+  margin-top: 500px;
 }
 /*# sourceMappingURL=home.css.map */

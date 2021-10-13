@@ -106,14 +106,17 @@ $space-blue: #668a93;
             font-size: calc(15px + 1.2vw);
             letter-spacing: 3px;
             border-bottom: solid black;
-            padding-left: 8px;
-            padding-right: 8px;
+            padding-left: 6px;
+            padding-right: 6px;
             width: fit-content;
         }
         #about-p {
             font-family: arial;
             font-size: calc(12px + 0.5vw);
-            margin-top: 25px;
+            letter-spacing: 0.8px;
+            word-spacing: 1px;
+            font-weight: 100;
+            margin-top: 45px;
             display: flex;
             flex-direction: column;
             width: 65vw;
@@ -124,9 +127,10 @@ $space-blue: #668a93;
         #about-tools {
             @include mediumText;
             text-align: center;
+            margin-top: 150px;
         }
         #about-tools-container {
-            margin-top: 5vh;
+            margin-top: 2vh;
             display: flex;
             flex-flow: row nowrap;
             column-gap: 7vw;
@@ -148,4 +152,8 @@ $space-blue: #668a93;
             }
         }
     }
+}
+
+#footer-wrapper {
+    margin-top: 500px;
 }
