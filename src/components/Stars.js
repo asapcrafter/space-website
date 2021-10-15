@@ -55,6 +55,7 @@ const Points = () => {
 	)
 }
 
+// Allows moving of camera by dragging around the scene for debugging
 const DebugCamera = () => {
 	const {
 		camera,
@@ -130,7 +131,7 @@ const MouseCamera = () => {
 		// Controls side-to-side movement
 		finalX = e.clientX
 		deltaX = finalX - initialX
-		inertiaX += deltaX * 0.0004
+		inertiaX += deltaX * 0.00045
 
 		if (initialX !== finalX) {
 			initialX = e.clientX
@@ -139,12 +140,12 @@ const MouseCamera = () => {
 		// Controls inward-outward movement
 		finalY = e.clientY
 		deltaY = finalY - initialY
-		inertiaY += deltaY * 0.00045
+		inertiaY += deltaY * 0.0006
 
 		if (initialY !== finalY) {
 			initialY = e.clientY
 		}
-	})
+	});
 
 	const raf = () => {
 		positionX += inertiaX
