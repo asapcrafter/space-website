@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import '../styles/css/home.css'
+import SpaceshipCanvas from './SpaceshipCanvas.js'
 
 const Home = () => {
-	// Scrolls to the About section on-click
+	// Scrolls to the About section on-click.
 	const handleScrollAbout = () => {
 		document.getElementById('about-title').scrollIntoView({
 			behavior: 'smooth',
@@ -11,7 +12,7 @@ const Home = () => {
 		});
 	}
 
-	// Scrolls to the Work section on-click
+	// Scrolls to the Work section on-click.
 	const handleScrollWork = () => {
 		document.getElementById('work-title').scrollIntoView({
 			behavior: 'smooth',
@@ -20,11 +21,8 @@ const Home = () => {
 		});
 	}
 
-	// window.onbeforeunload = function () {
-	// 	window.scrollTo(0, 0);
-	//   }
+	// Website scrolls to the top on page reload.
 	window.onbeforeunload = setTimeout(window.scrollTo(0, 0), 5000)
-
 
 	return (
 		<div id='body'>
@@ -88,6 +86,9 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<Suspense fallback={<div>Loading...</div>}>
+				<SpaceshipCanvas />
+			</Suspense>
 			<div id="footer-wrapper">
 				<div id="footer-container"></div>
 			</div>

@@ -17,6 +17,7 @@ const Nebula = () => {
 			map: texture,
 		})
 
+		// Generates specific number of cloud objects
 		for (let i = 0; i < 30; i++) {
 			const cloud = new THREE.Mesh(cloudGeo, cloudMaterial)
 			const { rotation, material } = cloud
