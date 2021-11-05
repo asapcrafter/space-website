@@ -11,7 +11,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Twinkle from './Twinkle.js'
 import Nebula from './Nebula.js'
-import Spaceship from './Spaceship'
 
 extend({ OrbitControls })
 

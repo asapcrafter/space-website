@@ -86,9 +86,9 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<Suspense fallback={<div>Loading...</div>}>
+			{/* <Suspense fallback={<div>Loading...</div>}>
 				<SpaceshipCanvas />
-			</Suspense>
+			</Suspense> */}
 			<div id="footer-wrapper">
 				<div id="footer-container"></div>
 			</div>

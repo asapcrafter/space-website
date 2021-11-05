@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import Spaceship from './Spaceship';
 import { Canvas } from '@react-three/fiber';
 

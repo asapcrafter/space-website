@@ -1,6 +1,6 @@
 import React from 'react';
 import * as THREE from 'three';
-import { useThree, useLoader, Canvas } from '@react-three/fiber';
+import { useThree, useLoader } from '@react-three/fiber';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import {MTLLoader} from 'three/examples/jsm/loaders/MTLLoader.js';
 import spacevox from '../assets/spacevox.obj';
