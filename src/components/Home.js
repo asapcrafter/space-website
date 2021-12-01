@@ -38,7 +38,7 @@ const Home = () => {
 			</div>
 			<div id='about-wrapper'>
 				<div id='about-container'>
-					<div id='about-title'>ABOUT</div>
+					<div id='about-title'></div>
 					<div id='about-p'>
 						<p>Welcome to my portfolio.</p>
 						<p>
@@ -49,7 +49,7 @@ const Home = () => {
 							in new areas such as 3D graphics using WebGL and ThreeJS.
 						</p>
 					</div>
-					<div id='about-tools'>TOOLS</div>
+					{/* <div id='about-tools'>TOOLS</div>
 					<div id='about-tools-container'>
 						<div className='about-tech-container'>
 							<div className='about-tech-title'>LANGUAGES</div>
@@ -78,11 +78,14 @@ const Home = () => {
 								<p>Jest</p>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					<div id="work-wrapper">
 						<div id="work-container">
 							<div id="work-title">WORK</div>
 						</div>
+					</div>
+					<div id="socials">
+
 					</div>
 				</div>
 			</div>
