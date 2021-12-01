@@ -1,10 +1,9 @@
 # Live demo: [Portfolio Site](https://www.stephentrieu.com/)
-My personal portfolio website
 
 ### Description
-This website was created using ThreeJS and React; specifically react-three-fiber to render in the graphics on each react component.  
+This website was created using ThreeJS and React, specifically react-three-fiber to render in the graphics on each react component.  
 
-### Stars Background
+### Star Cluster Background
 The star objects were generated using the following properties with a for-loop to create numerous stars and stored in an array for further use in creating the twinkling effect. 
 ``` javascript
 const Twinkle = () => {
@@ -60,6 +59,61 @@ useFrame(() => {
         }
     })
 })
+```
+### Mouse Parallax effect
+When moving the mouse pointer around the website, a slight parallax effect is used to move the galaxy background. Vanilla JS is used for basic DOM manipulation to gather data on the client's mouse position. This data goes through some algebra and is then used to move the canvas scene. The following method is also used to create a similar animation when the user scrolls through the website. 
+``` javascript
+const MouseCamera = () => {
+	const { camera } = useThree()
+
+	let positionX = 0
+	let initialX = 0
+	let finalX = 0
+	let deltaX = 0
+	let inertiaX = 0
+
+	let positionY = 0
+	let initialY = 0
+	let finalY = 0
+	let deltaY = 0
+	let inertiaY = 0
+
+	document.addEventListener('mousemove', e => {
+		// Controls side-to-side movement
+		finalX = e.clientX
+		deltaX = finalX - initialX
+		inertiaX += deltaX * 0.00045
+
+		if (initialX !== finalX) {
+			initialX = e.clientX
+		}
+
+		// Controls inward-outward movement
+		finalY = e.clientY
+		deltaY = finalY - initialY
+		inertiaY += deltaY * 0.0006
+
+		if (initialY !== finalY) {
+			initialY = e.clientY
+		}
+	});
+
+	const raf = () => {
+		positionX += inertiaX
+		inertiaX *= 0.954321
+		camera.position.z = positionX
+
+		positionY += inertiaY
+		inertiaY *= 0.954321
+		camera.position.x = positionY + 90
+
+		window.requestAnimationFrame(raf)
+	}
+
+	raf()
+
+	return null
+}
 ```
 ### Nebula Clouds
 The nebula is actually a collection of multiple transparent PNGs of a cloud. This was done by randomly rotating each individual cloud and setting the material property to a "mesh lambert" material. The semi-transparent property of this material gives a see through effect while also allowing the scene lighting to color the clouds. 
