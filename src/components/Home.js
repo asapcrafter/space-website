@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react'
+import React, {Suspense, useEffect} from 'react'
 import '../styles/css/home.css'
 import SpaceshipCanvas from './SpaceshipCanvas.js'
 
@@ -29,6 +29,53 @@ const Home = () => {
 		return new Date().getFullYear();
 	}
 
+
+	// Disables scrolling on the website when first entering
+	var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+	function preventDefault(e) {
+		e.preventDefault();
+	}
+
+	function preventDefaultForScrollKeys(e) {
+		if (keys[e.keyCode]) {
+			preventDefault(e);
+			return false;
+		}
+	}
+
+	var supportsPassive = false;
+	try {
+	window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+		get: function () { supportsPassive = true; } 
+	}));
+	} catch(e) {}
+
+	var wheelOpt = supportsPassive ? { passive: false } : false;
+	var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+	// call this to Disable 
+	const disableScroll = () => {
+		window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+		window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+		window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+		window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
+	// call this to Enable
+	const enableScroll = () => {
+		window.removeEventListener('DOMMouseScroll', preventDefault, false);
+		window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+		window.removeEventListener('touchmove', preventDefault, wheelOpt);
+		window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
+	// Automatically disables scrolling when the page loads
+	useEffect(() => {
+		disableScroll();
+	 }, [])
+
+
 	return (
 		<div id='body'>
 			<div id='intro-wrapper'>
@@ -36,8 +83,8 @@ const Home = () => {
 					<div id='intro-h1'>STEPHEN TRIEU</div>
 					<div id='intro-p'> WEB DEVELOPER | DESIGNER</div>
 					<div id='intro-button-container'>
-						<div id='intro-button-about' href='#about-title' onClick={handleScrollAbout}>ABOUT</div>
-						<div id='intro-button-work' onClick={handleScrollWork}>WORK</div>
+						<div id='intro-button-about' href='#about-title' onClick={() => {handleScrollAbout(); enableScroll()}}>ABOUT</div>
+						<div id='intro-button-work' onClick={() => {handleScrollWork(); enableScroll()}}>WORK</div>
 					</div>
 				</div>
 			</div>
