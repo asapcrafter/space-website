@@ -43,7 +43,7 @@ const Home = () => {
 						<p>Welcome to my portfolio.</p>
 						<p>
 							I am a web developer with a passion for designing
-							polished and beautiful applications. My focus is in desktop
+							polished and beautiful applications. My focus is on desktop
 							responsive websites using JavaScript, SASS/CSS, React, and Node.
 							On top of the basic technologies, I love to  experiment
 							in new areas such as 3D graphics using WebGL and ThreeJS.
@@ -79,13 +79,22 @@ const Home = () => {
 							</div>
 						</div>
 					</div> */}
+					{/* Icon link: https://www.flaticon.com/packs/social-media-171 */}
+					<div id="socials">
+						<a href="https://www.facebook.com/StephenTrieu.t/" target="_blank" rel="noopener noreferrer">
+							<img className="social-logo" src="/assets/facebook-white.png" alt="gh" width="55" height="55"/>
+						</a>
+						<a href="https://github.com/asapcrafter" target="_blank" rel="noopener noreferrer">
+							<img className="social-logo" src="/assets/gh.png" alt="gh" width="55" height="55"/>
+						</a>
+						<a href="https://www.linkedin.com/in/stephen-trieu-2170011b8/" target="_blank" rel="noopener noreferrer">
+							<img className="social-logo" src="/assets/linkedin.png" alt="linkedin" width="55" height="55"/>
+						</a>
+					</div>
 					<div id="work-wrapper">
 						<div id="work-container">
 							<div id="work-title">WORK</div>
 						</div>
-					</div>
-					<div id="socials">
-
 					</div>
 				</div>
 			</div>
