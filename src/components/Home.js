@@ -25,10 +25,7 @@ const Home = () => {
 	window.onbeforeunload = setTimeout(window.scrollTo(0, 0), 5000)
 
 	// Returns current year for copyright use.
-	const getYear = () => {
-		return new Date().getFullYear();
-	}
-
+	const getYear = () => new Date().getFullYear();
 
 	// Disables scrolling on the website when first entering
 	var keys = {37: 1, 38: 1, 39: 1, 40: 1};
@@ -46,10 +43,10 @@ const Home = () => {
 
 	var supportsPassive = false;
 	try {
-	window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-		get: function () { supportsPassive = true; } 
-	}));
-	} catch(e) {}
+		window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+			get: function () { supportsPassive = true; } 
+		}));
+	} catch(e){}
 
 	var wheelOpt = supportsPassive ? { passive: false } : false;
 	var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
@@ -71,10 +68,7 @@ const Home = () => {
 	}
 
 	// Automatically disables scrolling when the page loads
-	useEffect(() => {
-		disableScroll();
-	 }, [])
-
+	useEffect(() => {disableScroll()});
 
 	return (
 		<div id='body'>
@@ -100,61 +94,44 @@ const Home = () => {
 							in new areas such as 3D graphics using WebGL and ThreeJS.
 						</p>
 						<p>
-							Based in California, I am currently an undergrad at UC Santa Barbara. In my free time, I am always learning new technologies and finding new projects. You can check out some of these ideas down below. 
+							Based in California, I am currently an undergrad at UC Santa Barbara. In my free time, I am always learning new technologies and finding new projects. You can check out some of these ideas down below!
 						</p>
 					</div>
-
-					{/* <div id='about-tools'>TOOLS</div>
-					<div id='about-tools-container'>
-						<div className='about-tech-container'>
-							<div className='about-tech-title'>LANGUAGES</div>
-							<div className='about-tech-content'>
-								<p>JavaScript (ES6)</p>
-								<p>TypeScript</p>
-								<p>HTML5</p>
-								<p>SASS/CSS3</p>
-							</div>
-						</div>
-						<div className='about-tech-container'>
-							<div className='about-tech-title'>WEB</div>
-							<div className='about-tech-content'>
-								<p>React</p>
-								<p>Node.js</p>
-								<p>Webpack</p>
-								<p>JSON</p>
-							</div>
-						</div>
-						<div className='about-tech-container'>
-							<div className='about-tech-title'>TOOLS</div>
-							<div className='about-tech-content'>
-								<p>Web Service APIs</p>
-								<p>Git</p>
-								<p>VSCode</p>
-								<p>Jest</p>
-							</div>
-						</div>
-					</div> */}
-
-					{/* Icon link: https://www.flaticon.com/packs/social-media-171 */}
-					<div id="socials">
-						<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-							<img className="social-logo" src="/assets/facebook-white.png" alt="fb" width="50" height="50"/>
-						</a>
-						<a href="https://github.com/asapcrafter" target="_blank" rel="noopener noreferrer">
-							<img className="social-logo" src="/assets/gh.png" alt="gh" width="50" height="50"/>
-						</a>
-						<a href="https://www.linkedin.com/in/stephen-trieu-2170011b8/" target="_blank" rel="noopener noreferrer">
-							<img className="social-logo" src="/assets/linkedin.png" alt="linkedin" width="50" height="50"/>
-						</a>
-						<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-							<img className="social-logo" src="/assets/twitter.png" alt="twitter" width="50" height="50"/>
-						</a>
+				{/* Icon link: https://www.flaticon.com/packs/social-media-171 */}
+				<div id="socials">
+					<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+						<img className="social-logo" src="/assets/facebook-white.png" alt="fb" width="50" height="50"/>
+					</a>
+					<a href="https://github.com/asapcrafter" target="_blank" rel="noopener noreferrer">
+						<img className="social-logo" src="/assets/gh.png" alt="gh" width="50" height="50"/>
+					</a>
+					<a href="https://www.linkedin.com/in/stephen-trieu-2170011b8/" target="_blank" rel="noopener noreferrer">
+						<img className="social-logo" src="/assets/linkedin.png" alt="linkedin" width="50" height="50"/>
+					</a>
+					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+						<img className="social-logo" src="/assets/twitter.png" alt="twitter" width="50" height="50"/>
+					</a>
+				</div>
+				<div id="work-wrapper">
+					<div id="work-container">
+						<div id="work-title"></div>
 					</div>
-					<div id="work-wrapper">
-						<div id="work-container">
-							<div id="work-title"></div>
-						</div>
-					</div>
+				</div>
+				<div id='about-tools-title'>Tools and Technologies</div>
+				<div id='about-tools-container'>
+					<img src="/assets/icons/bash.png" title="Bash" height="50" alt=""/>
+					<img src="/assets/icons/firebase2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/git2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/github2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/html5.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/mapbox.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/node2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/react2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/sass2.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/threejs.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/vscode.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/webgl.png" title="" height="50" alt=""/>
+				</div>
 				</div>
 			</div>
 			<div id="footer-wrapper">

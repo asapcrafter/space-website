@@ -134,14 +134,31 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   font-family: futura-thin;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #about-wrapper #about-container {
   padding-top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #about-wrapper #about-container #about-title {
@@ -156,6 +173,8 @@
 }
 
 #about-wrapper #about-container #about-p {
+  -ms-flex-item-align: center;
+      align-self: center;
   font-family: arial;
   font-size: calc(12px + 0.33vw);
   letter-spacing: 0.8px;
@@ -175,51 +194,29 @@
   line-height: 34px;
 }
 
-#about-wrapper #about-container #about-tools {
+#about-wrapper #about-container #about-tools-title {
   font-size: calc(10px + 1vw);
   text-align: center;
-  margin-top: 150px;
+  margin-top: 20vh;
+  width: 100%;
 }
 
 #about-wrapper #about-container #about-tools-container {
-  margin-top: 2vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-column-gap: 7vw;
-          column-gap: 7vw;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#about-wrapper #about-container .about-tech-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-}
-
-#about-wrapper #about-container .about-tech-container .about-tech-content {
-  margin-top: 4px;
-  height: 10vh;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  max-width: 800px;
+  margin-top: 4vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-column-gap: 1px;
+          column-gap: 1px;
+  row-gap: 30px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #socials {

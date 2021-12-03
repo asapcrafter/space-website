@@ -99,10 +99,15 @@ $space-blue: #668a93;
     margin-top: 20vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: futura-thin;
+    align-items: center;
     #about-container {
         padding-top: 20vh;
+        display: flex;
+      flex-direction: column;
+        justify-content: center;
         #about-title {
             font-size: calc(15px + 1.2vw);
             letter-spacing: 3px;
@@ -112,6 +117,7 @@ $space-blue: #668a93;
             height: 10px;
         }
         #about-p {
+            align-self: center;
             font-family: arial;
             font-size: calc(12px + 0.33vw);
             letter-spacing: 0.8px;
@@ -125,32 +131,23 @@ $space-blue: #668a93;
             gap: 1.5vh;
             line-height: 34px;
         }
-        #about-tools {
+        #about-tools-title {
             @include mediumText;
+            // font-family: arial;
             text-align: center;
-            margin-top: 150px;
+            margin-top: 20vh;
+            width: 100%;
         }
         #about-tools-container {
-            margin-top: 2vh;
-            display: flex;
-            flex-flow: row nowrap;
-            column-gap: 7vw;
-            justify-content: center;
-        }
-        .about-tech-container {
-            display: flex;
-            // justify-content: center;
-            flex-flow: column nowrap;
-            .about-tech-title {
-                
-            }
-            .about-tech-content {
-                margin-top: 4px;
-                height: 10vh;
-                justify-content: space-between;
-                display: flex;
-                flex-direction: column;
-            }
+            max-width: 800px;
+            margin-top: 4vh;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr 1fr;
+            column-gap: 1px; //horizontal gap
+            row-gap: 30px; //vertical gap
+            justify-items: center;
+            align-items: center;
         }
     }
 }
