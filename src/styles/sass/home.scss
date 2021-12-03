@@ -135,13 +135,15 @@ $space-blue: #668a93;
             @include mediumText;
             // font-family: arial;
             text-align: center;
-            margin-top: 20vh;
+            margin-top: 25vh;
             width: 100%;
         }
         #about-tools-container {
             max-width: 800px;
             margin-top: 4vh;
             display: grid;
+            padding-left: 10px;
+            padding-right: 10px;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: 1fr 1fr;
             column-gap: 1px; //horizontal gap

@@ -119,18 +119,18 @@ const Home = () => {
 				</div>
 				<div id='about-tools-title'>Tools and Technologies</div>
 				<div id='about-tools-container'>
-					<img src="/assets/icons/bash.png" title="Bash" height="50" alt=""/>
-					<img src="/assets/icons/firebase2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/git2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/github2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/html5.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/mapbox.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/node2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/react2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/sass2.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/threejs.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/vscode.png" title="" height="50" alt=""/>
-					<img src="/assets/icons/webgl.png" title="" height="50" alt=""/>
+					<img src="/assets/icons/html5.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/react2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/sass2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/node2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/firebase2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/github2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/git2.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/bash.png" title="Bash" height="54" alt=""/>
+					<img src="/assets/icons/mapbox.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/threejs.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/vscode.png" title="" height="54" alt=""/>
+					<img src="/assets/icons/webgl.png" title="" height="54" alt=""/>
 				</div>
 				</div>
 			</div>
