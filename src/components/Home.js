@@ -1,6 +1,7 @@
-import React, {Suspense, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import '../styles/css/home.css'
 import SpaceshipCanvas from './SpaceshipCanvas.js'
+import ProjectCard from './ProjectCard'
 
 const Home = () => {
 	// Scrolls to the About section on-click.
@@ -23,6 +24,10 @@ const Home = () => {
 
 	// Website scrolls to the top on page reload.
 	window.onbeforeunload = setTimeout(window.scrollTo(0, 0), 5000)
+	useEffect(() => {
+		window.history.scrollRestoration = 'manual';
+		window.scrollTo(0, 0);
+	  }, []);
 
 	// Returns current year for copyright use.
 	const getYear = () => new Date().getFullYear();
@@ -68,7 +73,7 @@ const Home = () => {
 	}
 
 	// Automatically disables scrolling when the page loads
-	useEffect(() => {disableScroll()});
+	useEffect(() => {disableScroll(); window.scrollTo(0, 0)});
 
 	return (
 		<div id='body'>
@@ -89,7 +94,7 @@ const Home = () => {
 						<p>Welcome to my portfolio.</p>
 						<p>
 							I am a web developer with a passion for designing
-							polished and beautiful applications. My focus is on creating unique experiences using React, Canvas, and Javascript.
+							polished and beautiful applications. My focus is on creating unique experiences and products using React, Canvas, and Javascript.
 							On top of the basic technologies, I also love to  experiment
 							in new areas such as 3D graphics using WebGL and ThreeJS.
 						</p>
@@ -112,26 +117,32 @@ const Home = () => {
 						<img className="social-logo" src="/assets/twitter.png" alt="twitter" width="50" height="50"/>
 					</a>
 				</div>
-				<div id="work-wrapper">
-					<div id="work-container">
-						<div id="work-title"></div>
+				<div id='about-tools-title'>Technologies</div>
+					<div id='about-tools-container'>
+						<img src="/assets/icons/html5.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/react2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/sass2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/node2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/firebase2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/github2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/git2.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/bash.png" title="Bash" height="54" alt=""/>
+						<img src="/assets/icons/mapbox.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/threejs.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/vscode.png" title="" height="54" alt=""/>
+						<img src="/assets/icons/webgl.png" title="" height="54" alt=""/>
 					</div>
 				</div>
-				<div id='about-tools-title'>Tools and Technologies</div>
-				<div id='about-tools-container'>
-					<img src="/assets/icons/html5.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/react2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/sass2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/node2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/firebase2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/github2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/git2.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/bash.png" title="Bash" height="54" alt=""/>
-					<img src="/assets/icons/mapbox.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/threejs.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/vscode.png" title="" height="54" alt=""/>
-					<img src="/assets/icons/webgl.png" title="" height="54" alt=""/>
-				</div>
+				<div id="card-wrapper">
+					<div id="card-title">Projects</div>
+					<ProjectCard 
+						image="/assets/projects/pekoe.jpg"
+						title='Shopping Site Landing Page'
+					/>
+					<ProjectCard
+						image='/assets/projects/mcgame.jpg'
+						title='Minecraft Memory Game'
+					/>
 				</div>
 			</div>
 			<div id="footer-wrapper">

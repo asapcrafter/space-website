@@ -109,7 +109,7 @@ $space-blue: #668a93;
       flex-direction: column;
         justify-content: center;
         #about-title {
-            font-size: calc(15px + 1.2vw);
+            font-size: calc(20px + 1.2vw);
             letter-spacing: 3px;
             padding-left: 6px;
             padding-right: 6px;
@@ -135,12 +135,12 @@ $space-blue: #668a93;
             @include mediumText;
             // font-family: arial;
             text-align: center;
-            margin-top: 25vh;
+            margin-top: 26vh;
             width: 100%;
         }
         #about-tools-container {
             max-width: 800px;
-            margin-top: 4vh;
+            margin-top: 3vh;
             display: grid;
             padding-left: 10px;
             padding-right: 10px;
