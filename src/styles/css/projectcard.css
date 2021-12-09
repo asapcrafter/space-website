@@ -47,7 +47,7 @@
 
 .card-container .card-overlay {
   position: absolute;
-  font-family: arial;
+  font-family: 'Raleway', sans-serif;
   top: 0%;
   text-align: center;
   padding: 8px;
