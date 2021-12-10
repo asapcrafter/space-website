@@ -184,9 +184,17 @@ const SkyBox = () => {
 	return null
 }
 
+// const renderer = new THREE.WebGLRenderer({
+//     powerPreference: 'high-performance'
+// })
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
 const Stars = () => {
 	return (
-		<Canvas colorManagement={true} camera={{ position: [100, 5, 7], fov: 80 }}>
+		<Canvas 
+			colorManagement={true} 
+			camera={{ position: [100, 5, 7], fov: 80 }}
+		>
 			<Nebula />
 			<Points />
 			<SkyBox />
