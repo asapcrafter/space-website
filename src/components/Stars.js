@@ -17,16 +17,19 @@ extend({ OrbitControls })
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 700
+	const count = 1000
 
 	const positions = useMemo(() => {
 		let positions = []
 
 		// Position values are randomized
+		const getRandomNumber = (min, max) => {
+			return Math.random() * (max - min) + min;
+		}
 		for (let i = 0; i < count; i++) {
-			const x = Math.random() * 200 - 150
-			const y = Math.random() * 320 - 160
-			const z = Math.random() * 500 - 250
+			const x = getRandomNumber(-260, 55) //Outward-inward
+			const y = getRandomNumber(-160, 160) //Down-up
+			const z = getRandomNumber(-420, 420) //Left-right
 			positions.push(x, y, z)
 		}
 		return new Float32Array(positions)
@@ -198,9 +201,9 @@ const Stars = () => {
 			<Nebula />
 			<Points />
 			<SkyBox />
+			{/* <Twinkle />
 			<Twinkle />
-			<Twinkle />
-			<Twinkle />
+			<Twinkle /> */}
 			{/* <DebugCamera /> */}
 			<ScrollCamera />
 			<MouseCamera />

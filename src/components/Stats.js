@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 const DebugStats = () => {
 	const stats = new Stats();
-	stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+	stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
 	document.body.appendChild( stats.dom );
 	stats.dom.style.visibility = 'hidden';
 
