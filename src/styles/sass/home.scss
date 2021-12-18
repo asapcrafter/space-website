@@ -139,17 +139,20 @@ $space-blue: #668a93;
             width: 100%;
         }
         #about-tools-container {
-            max-width: 800px;
+            align-self: center;
             margin-top: 3vh;
             display: grid;
             padding-left: 10px;
             padding-right: 10px;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: 1fr 1fr;
-            column-gap: 1px; //horizontal gap
-            row-gap: 30px; //vertical gap
+            column-gap: 3vw; //horizontal gap
+            row-gap: 20px; //vertical gap
             justify-items: center;
             align-items: center;
+            .tools-img {
+                width: 45px;
+            }
         }
     }
 }
@@ -176,6 +179,6 @@ $space-blue: #668a93;
     text-align: center;
     justify-content: center;
     small {
-        font-size: 14px;
+        font-size: 12px;
     }
 }

@@ -119,21 +119,21 @@ const Home = () => {
 				</div>
 				<div id='about-tools-title'>Technologies</div>
 					<div id='about-tools-container'>
-						<img src="/assets/icons/html5.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/react2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/sass2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/node2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/firebase2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/github2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/git2.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/bash.png" title="Bash" height="54" alt=""/>
-						<img src="/assets/icons/mapbox.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/threejs.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/vscode.png" title="" height="54" alt=""/>
-						<img src="/assets/icons/webgl.png" title="" height="54" alt=""/>
+						<img className='tools-img' src="/assets/icons/html5.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/react2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/sass2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/node2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/firebase2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/github2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/git2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/bash.png" title="Bash" alt=""/>
+						<img className='tools-img' src="/assets/icons/mapbox.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/threejs.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/vscode.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/webgl.png" title="" alt=""/>
 					</div>
 				</div>
-				<div id="card-wrapper">
+				{/* <div id="card-wrapper">
 					<div id="card-title">Projects</div>
 					<ProjectCard 
 						image="/assets/projects/pekoe.jpg"
@@ -143,7 +143,7 @@ const Home = () => {
 						image='/assets/projects/mcgame.jpg'
 						title='Minecraft Memory Game'
 					/>
-				</div>
+				</div> */}
 			</div>
 			<div id="footer-wrapper">
 				<div id="footer-container">
