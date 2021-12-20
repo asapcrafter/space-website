@@ -23,7 +23,7 @@ const getRandomNumber = (min, max) => {
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 1100
+	const count = 550
 
 	const positions = useMemo(() => {
 		let positions = []
@@ -52,7 +52,7 @@ const Points = () => {
 				attach='material'
 				map={imgTexture}
 				color={0xffffff}
-				size={0.6}
+				size={0.65}
 				transparent={false}
 				alphaTest={0.5}
 				opacity={1.0}
@@ -210,8 +210,8 @@ const Stars = () => {
 			antialias={false}
 		>
 			<SkyBox />
-			{Array.from({ length: 43}, (_, i) => <Cloud key={i} />)} 
-			{Array.from({ length: 25}, (_, i) => <Cloud2 key={i} />)}
+			{Array.from({ length: 40}, (_, i) => <Cloud key={i} />)} 
+			{Array.from({ length: 15}, (_, i) => <Cloud2 key={i} />)}
 			{Array.from({ length: 7}, (_, i) => <Cloud3 key={i} />)} 
 			{Array.from({ length: 5}, (_, i) => <Cloud4 key={i} />)} 
 			<Points />
