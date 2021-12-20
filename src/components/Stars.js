@@ -11,10 +11,10 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Twinkle from './Twinkle.js'
 import Nebula from './Nebula.js'
-import Nebula2 from './Nebula2.js'
-import smoke from '../assets/smoke.png'
-
-
+import nebula from '../assets/nebula.png'
+import Cloud from './Cloud.js'
+import Cloud2 from './Cloud2.js'
+import Cloud3 from './Cloud3.js'
 extend({ OrbitControls })
 
 // Number generator for object positioning
@@ -172,74 +172,12 @@ const MouseCamera = () => {
 	return null
 }
 
-// Adds a dark blue-black background color
+// Adds lighting to scene
 const SkyBox = () => {
 	const { scene } = useThree()
 	scene.background = new THREE.Color('#0c0f18')
-
-	const loader = new THREE.TextureLoader()
-	loader.load('../assets/space-background.jpg', function (texture) {
-		const geo = new THREE.PlaneBufferGeometry(300, 300)
-		const material = new THREE.MeshBasicMaterial({
-			// transparent: true,
-			// map: texture,
-		})
-		const background = new THREE.Mesh(geo, material)
-		background.position.set(-300, 10, 100)
-		scene.add(background)
-	})
-
-	return null
-}
-
-// const renderer = new THREE.WebGLRenderer({
-//     powerPreference: 'high-performance'
-// })
-// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
-const Cloud = () => {
-	const ref = useRef(null)
-	const texture = useLoader(THREE.TextureLoader, smoke)
-
-	const meshPosition = [
-		getRandomNumber(-235, -250), // -250 ~ -220
-		Math.random() * 260 - 150, // 200 ~ 350
-		Math.random() * 700 - 380 // -300 ~ 400
-	]
-
-	const meshRotation = [
-		1.16,
-		(Math.PI / 180) * 90,
-		Math.random() * 2 * Math.PI
-	]
-
-	// Cloud animation
-	useFrame(() => {
-	    ref.current.rotation.z -= 0.0016
-	});
-
-	return (
-		<mesh ref={ref} position={meshPosition} rotation={meshRotation}>
-			<planeBufferGeometry
-				attach='geometry'
-				args={[200, 200]}
-			/>
-			<meshLambertMaterial
-				attach='material'
-				map={texture}
-				transparent={true}
-				polygonOffset={true}
-				polygonOffsetFactor={-4}
-				depthWrite={false}
-				opacity={0.7}
-			/>
-		</mesh>
-	);
-}
-
-// Lighting for nebula clouds
-const NebulaLighting = () => {
-	const {scene} = useThree()
+	
+	// Lighting for nebula clouds
 	const orangeLight = new THREE.PointLight(0x2334a9, 5, 100, 1.7)
 	orangeLight.position.set(-210, 20, 250)
 	scene.add(orangeLight)
@@ -271,57 +209,13 @@ const Stars = () => {
 		<Canvas 
 			colorManagement={true} 
 			camera={{ position: [100, 5, 7], fov: 80 }}
+			antialias={false}
 		>
-			{/* <Nebula /> */}
-			<NebulaLighting />
-			<Points />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
-			<Nebula2 />
 			<SkyBox />
-			{/* <Twinkle />
-			<Twinkle />
-			<Twinkle /> */}
+			{Array.from({ length: 45 }, (_, i) => <Cloud key={i} />)} 
+			{Array.from({ length: 20 }, (_, i) => <Cloud2 key={i} />)}
+			{Array.from({ length: 3 }, (_, i) => <Cloud3 key={i} />)} 
+			<Points />
 			{/* <DebugCamera /> */}
 			<ScrollCamera />
 			<MouseCamera />

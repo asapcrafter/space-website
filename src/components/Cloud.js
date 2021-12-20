@@ -1,15 +1,14 @@
 import { useFrame, useThree, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
-import smoke from '../assets/nebula.png'
+import nebula from '../assets/nebula.png'
 import {useRef} from 'react'
+import { OneMinusSrcAlphaFactor } from 'three'
 
-const Nebula2 = () => {
-    const {scene} = useThree()
-    console.log('Nebula2 loaded')
+const Cloud = () => {
     const ref = useRef(null)
     
     // Cloud Texture
-    const texture = useLoader(THREE.TextureLoader, smoke)
+    const texture = useLoader(THREE.TextureLoader, nebula)
 
     // Number generator for object positioning
     const getRandomNumber = (min, max) => {
@@ -17,13 +16,13 @@ const Nebula2 = () => {
     }
 
     const meshPosition = [
-		getRandomNumber(-235, -250), // -250 ~ -220
+		getRandomNumber(-225, -255), // -250 ~ -220
         Math.random() * 260 - 150, // 200 ~ 350
         Math.random() * 700 - 380 // -300 ~ 400
     ]
 
     const meshRotation = [
-        1.16,
+        getRandomNumber(1.14, 4.16),
         (Math.PI / 180) * 90,
         Math.random() * 2 * Math.PI
     ]
@@ -45,11 +44,12 @@ const Nebula2 = () => {
                 polygonOffsetFactor={-4}
                 depthWrite={false}
                 depthTest={false}
-                opacity={0.7}
+                opacity={0.65}
                 castShadow={false}
+                anisotropy={0}
             />
         </mesh>
     );
 }
     
-export default Nebula2;
+export default Cloud;

@@ -1,5 +1,4 @@
 import Stats from 'three/examples/jsm/libs/stats.module'
-import {useState} from 'react'
 
 const DebugStats = () => {
 	const stats = new Stats();
