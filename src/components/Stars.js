@@ -9,12 +9,10 @@ import {
 } from '@react-three/fiber'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import Twinkle from './Twinkle.js'
-import Nebula from './Nebula.js'
-import nebula from '../assets/nebula.png'
 import Cloud from './Cloud.js'
 import Cloud2 from './Cloud2.js'
 import Cloud3 from './Cloud3.js'
+import Cloud4 from './Cloud4.js'
 extend({ OrbitControls })
 
 // Number generator for object positioning
@@ -25,7 +23,7 @@ const getRandomNumber = (min, max) => {
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 1000
+	const count = 1100
 
 	const positions = useMemo(() => {
 		let positions = []
@@ -212,9 +210,10 @@ const Stars = () => {
 			antialias={false}
 		>
 			<SkyBox />
-			{Array.from({ length: 45}, (_, i) => <Cloud key={i} />)} 
-			{Array.from({ length: 30}, (_, i) => <Cloud2 key={i} />)}
-			{Array.from({ length: 5}, (_, i) => <Cloud3 key={i} />)} 
+			{Array.from({ length: 43}, (_, i) => <Cloud key={i} />)} 
+			{Array.from({ length: 25}, (_, i) => <Cloud2 key={i} />)}
+			{Array.from({ length: 7}, (_, i) => <Cloud3 key={i} />)} 
+			{Array.from({ length: 5}, (_, i) => <Cloud4 key={i} />)} 
 			<Points />
 			{/* <DebugCamera /> */}
 			<ScrollCamera />
