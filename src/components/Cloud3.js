@@ -33,7 +33,7 @@ const Cloud3 = () => {
         <mesh ref={ref} position={meshPosition} rotation={meshRotation}>
             <planeBufferGeometry
                 attach='geometry'
-                args={[200, 200, 30]}
+                args={[200, 200, 60]}
             />
             <meshLambertMaterial
                 attach='material'

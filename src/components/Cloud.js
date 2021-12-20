@@ -1,6 +1,6 @@
 import { useFrame, useThree, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
-import nebula from '../assets/nebula.png'
+import nebula from '../assets/nebula-de.png'
 import {useRef} from 'react'
 import { OneMinusSrcAlphaFactor } from 'three'
 
@@ -34,7 +34,7 @@ const Cloud = () => {
         <mesh ref={ref} position={meshPosition} rotation={meshRotation}>
             <planeBufferGeometry
                 attach='geometry'
-                args={[200, 200, 30]}
+                args={[200, 200, 75]}
             />
             <meshLambertMaterial
                 attach='material'
@@ -44,7 +44,7 @@ const Cloud = () => {
                 polygonOffsetFactor={-4}
                 depthWrite={false}
                 depthTest={false}
-                opacity={0.65}
+                opacity={0.5}
                 castShadow={false}
                 anisotropy={0}
             />

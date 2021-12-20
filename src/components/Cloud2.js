@@ -33,7 +33,7 @@ const Cloud2 = () => {
         <mesh ref={ref} position={meshPosition} rotation={meshRotation}>
             <planeBufferGeometry
                 attach='geometry'
-                args={[200, 200, 30]}
+                args={[200, 200, 75]}
             />
             <meshLambertMaterial
                 attach='material'
@@ -43,7 +43,7 @@ const Cloud2 = () => {
                 polygonOffsetFactor={-4}
                 depthWrite={false}
                 depthTest={false}
-                opacity={0.7}
+                opacity={0.5}
                 castShadow={false}
             />
         </mesh>

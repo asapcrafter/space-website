@@ -32,7 +32,7 @@ const Points = () => {
 
 		// Position values are randomized
 		for (let i = 0; i < count; i++) {
-			const x = getRandomNumber(-260, 50) //Outward-inward
+			const x = getRandomNumber(-260, 55) //Outward-inward
 			const y = getRandomNumber(-160, 160) //Down-up
 			const z = getRandomNumber(-420, 420) //Left-right
 			positions.push(x, y, z)
@@ -212,9 +212,9 @@ const Stars = () => {
 			antialias={false}
 		>
 			<SkyBox />
-			{Array.from({ length: 45 }, (_, i) => <Cloud key={i} />)} 
-			{Array.from({ length: 20 }, (_, i) => <Cloud2 key={i} />)}
-			{Array.from({ length: 3 }, (_, i) => <Cloud3 key={i} />)} 
+			{Array.from({ length: 45}, (_, i) => <Cloud key={i} />)} 
+			{Array.from({ length: 30}, (_, i) => <Cloud2 key={i} />)}
+			{Array.from({ length: 5}, (_, i) => <Cloud3 key={i} />)} 
 			<Points />
 			{/* <DebugCamera /> */}
 			<ScrollCamera />
