@@ -32,7 +32,7 @@ const Points = () => {
 
 		// Position values are randomized
 		for (let i = 0; i < count; i++) {
-			const x = getRandomNumber(-260, 55) //Outward-inward
+			const x = getRandomNumber(-260, 50) //Outward-inward
 			const y = getRandomNumber(-160, 160) //Down-up
 			const z = getRandomNumber(-420, 420) //Left-right
 			positions.push(x, y, z)
@@ -237,15 +237,87 @@ const Cloud = () => {
 	);
 }
 
+// Lighting for nebula clouds
+const NebulaLighting = () => {
+	const {scene} = useThree()
+	const orangeLight = new THREE.PointLight(0x2334a9, 5, 100, 1.7)
+	orangeLight.position.set(-210, 20, 250)
+	scene.add(orangeLight)
+	
+	const darkPurple = new THREE.PointLight(0x36336a, 10, 120, 1.7)
+	darkPurple.position.set(-210, 30, -180)
+	scene.add(darkPurple)
+	
+	const blueLight = new THREE.PointLight(0x1a2e69, 5, 120, 1.7)
+	blueLight.position.set(-210, -20, 50)
+	scene.add(blueLight)
+	
+	const fourLight = new THREE.PointLight(0x353267, 5, 70, 1.7)
+	fourLight.position.set(-210, 80, 350)
+	scene.add(fourLight)
+	
+	const fiveLight = new THREE.PointLight(0x353267, 5, 70, 1.7)
+	fiveLight.position.set(-210, 100, -120)
+	scene.add(fiveLight)
+	
+	const ambientLight = new THREE.AmbientLight(0x213371, 0.00005)
+	scene.add(ambientLight)
+
+	return null
+}
+
 const Stars = () => {
 	return (
 		<Canvas 
 			colorManagement={true} 
 			camera={{ position: [100, 5, 7], fov: 80 }}
 		>
-			<Nebula />
-			{/* <Nebula2 /> */}
+			{/* <Nebula /> */}
+			<NebulaLighting />
 			<Points />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
+			<Nebula2 />
 			<SkyBox />
 			{/* <Twinkle />
 			<Twinkle />
