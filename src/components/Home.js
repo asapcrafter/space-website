@@ -113,6 +113,9 @@ const Home = () => {
 					<a href="https://www.linkedin.com/in/stephen-trieu-2170011b8/" target="_blank" rel="noopener noreferrer">
 						<img className="social-logo" src="/assets/linkedin.png" alt="linkedin" width="50" height="50"/>
 					</a>
+					<a href="https://stackoverflow.com/users/17720458/stevet" target="_blank" rel="noopener noreferrer">
+						<img className="social-logo" src="/assets/stackoverflow.png" alt="stackoverflow" width="48" height="45"/>
+					</a>
 					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
 						<img className="social-logo" src="/assets/twitter.png" alt="twitter" width="50" height="50"/>
 					</a>
