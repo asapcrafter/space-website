@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.23012b2e.chunk.css",
-    "main.js": "/static/js/main.d719c4bc.chunk.js",
-    "main.js.map": "/static/js/main.d719c4bc.chunk.js.map",
+    "main.css": "/static/css/main.afd3e628.chunk.css",
+    "main.js": "/static/js/main.2b023435.chunk.js",
+    "main.js.map": "/static/js/main.2b023435.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b6b24110.js",
     "runtime-main.js.map": "/static/js/runtime-main.b6b24110.js.map",
-    "static/js/2.df53d60d.chunk.js": "/static/js/2.df53d60d.chunk.js",
-    "static/js/2.df53d60d.chunk.js.map": "/static/js/2.df53d60d.chunk.js.map",
+    "static/js/2.99ea65d0.chunk.js": "/static/js/2.99ea65d0.chunk.js",
+    "static/js/2.99ea65d0.chunk.js.map": "/static/js/2.99ea65d0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.23012b2e.chunk.css.map": "/static/css/main.23012b2e.chunk.css.map",
-    "static/js/2.df53d60d.chunk.js.LICENSE.txt": "/static/js/2.df53d60d.chunk.js.LICENSE.txt",
+    "static/css/main.afd3e628.chunk.css.map": "/static/css/main.afd3e628.chunk.css.map",
+    "static/js/2.99ea65d0.chunk.js.LICENSE.txt": "/static/js/2.99ea65d0.chunk.js.LICENSE.txt",
     "static/media/home.css": "/static/media/SpaceGrotesk.0ab039e3.ttf",
     "static/media/milkyway.57f1f515.png": "/static/media/milkyway.57f1f515.png",
     "static/media/nebula-de.fc94fe75.png": "/static/media/nebula-de.fc94fe75.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6b24110.js",
-    "static/js/2.df53d60d.chunk.js",
-    "static/css/main.23012b2e.chunk.css",
-    "static/js/main.d719c4bc.chunk.js"
+    "static/js/2.99ea65d0.chunk.js",
+    "static/css/main.afd3e628.chunk.css",
+    "static/js/main.2b023435.chunk.js"
   ]
 }
