@@ -46,7 +46,6 @@ const Cloud = () => {
                 depthTest={false}
                 opacity={0.5}
                 castShadow={false}
-                anisotropy={0}
             />
         </mesh>
     );
