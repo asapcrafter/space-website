@@ -207,7 +207,6 @@ const Stars = () => {
 		<Canvas 
 			colorManagement={true} 
 			camera={{ position: [100, 5, 7], fov: 80 }}
-			antialias={false}
 		>
 			<SkyBox />
 			{Array.from({ length: 40}, (_, i) => <Cloud key={i} />)} 

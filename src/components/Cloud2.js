@@ -27,7 +27,7 @@ const Cloud2 = () => {
     ]
 
     // Animation for cloud rotation
-    useFrame(() => {ref.current.rotation.z -= 0.0016});
+    useFrame(() => {ref.current.rotation.z -= 0.001});
 
     return (
         <mesh ref={ref} position={meshPosition} rotation={meshRotation}>
