@@ -136,17 +136,45 @@ const Home = () => {
 						<img className='tools-img' src="/assets/icons/webgl.png" title="" alt=""/>
 					</div>
 				</div>
-				{/* <div id="card-wrapper">
+				<div id="card-wrapper">
 					<div id="card-title">Projects</div>
 					<ProjectCard 
-						image="/assets/projects/pekoe.jpg"
-						title='Shopping Site Landing Page'
+						title='Shopping landing page'
+						description='Skincare landing page using react routers'
+						gitLink='https://github.com/asapcrafter/shopping-cart'
+						liveLink='https://asapcrafter.github.io/shopping-cart/'
 					/>
-					<ProjectCard
-						image='/assets/projects/mcgame.jpg'
-						title='Minecraft Memory Game'
+					<ProjectCard 
+						title='React memory game'
+						description='A minecraft themed memory game using react'
+						gitLink='https://github.com/asapcrafter/memory-game'
+						liveLink='https://asapcrafter.github.io/memory-game/'
 					/>
-				</div> */}
+					<ProjectCard 
+						title='Map API Site'
+						description={`A rendered virtual map of UCSB's campus using MapBoxJS API`}
+						gitLink='https://github.com/asapcrafter/ucsb-campus-map'
+						liveLink='https://asapcrafter.github.io/ucsb-campus-map/'
+					/>
+					<ProjectCard 
+						title='Weather API'
+						description='A simple weather checker that uses a given location input'
+						gitLink='https://github.com/asapcrafter/weather-app'
+						liveLink='https://asapcrafter.github.io/weather-app/'
+					/>
+					<ProjectCard 
+						title='Tic-Tac-To Game'
+						description='Exactly what you expect it do be'
+						gitLink='https://github.com/asapcrafter/tic-tac-toe'
+						liveLink='https://asapcrafter.github.io/tic-tac-toe/'
+					/>
+					{/* <ProjectCard 
+						title=''
+						description=''
+						gitLink=''
+						liveLink=''
+					/> */}
+				</div>
 			</div>
 			<div id="footer-wrapper">
 				<div id="footer-container">
