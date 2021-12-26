@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import '../styles/css/home.css'
 import SpaceshipCanvas from './SpaceshipCanvas.js'
 import ProjectCard from './ProjectCard'
-
+import Typical from 'react-typical'
 const Home = () => {
 	// Scrolls to the About section on-click.
 	const handleScrollAbout = () => {
@@ -73,7 +73,7 @@ const Home = () => {
 	}
 
 	// Automatically disables scrolling when the page loads
-	useEffect(() => {disableScroll(); window.scrollTo(0, 0)});
+	useEffect(() => {disableScroll(); window.scrollTo(0, 0)});	
 
 	return (
 		<div id='body'>
@@ -91,7 +91,14 @@ const Home = () => {
 				<div id='about-container'>
 					<div id='about-title'></div>
 					<div id='about-p'>
-						<p>Welcome to my portfolio.</p>
+						<Typical 
+							steps={[
+								'Welcome to my portfolio.', 5000,
+								' Welcome to my portfolio.', 5000,
+							]}
+							loop={Infinity}
+							/>
+						{/* <p>Welcome to my portfolio.</p> */}
 						<p>
 							I am a web developer with a passion for designing
 							polished and beautiful applications. My focus is on creating unique experiences and products using React, Canvas, and Javascript.
