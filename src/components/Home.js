@@ -27,7 +27,7 @@ const Home = () => {
 	useEffect(() => {
 		window.history.scrollRestoration = 'manual';
 		window.scrollTo(0, 0);
-	  }, []);
+	}, []);
 
 	// Returns current year for copyright use.
 	const getYear = () => new Date().getFullYear();

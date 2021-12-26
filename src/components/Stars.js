@@ -196,9 +196,6 @@ const SkyBox = () => {
 	fiveLight.position.set(-210, 100, -120)
 	scene.add(fiveLight)
 	
-	const ambientLight = new THREE.AmbientLight(0x213371, 0.00005)
-	scene.add(ambientLight)
-
 	return null
 }
 
@@ -208,11 +205,11 @@ const Stars = () => {
 			colorManagement={true} 
 			camera={{ position: [100, 5, 7], fov: 80 }}
 		>
-			<SkyBox />
+			<SkyBox />	
 			{Array.from({ length: 40}, (_, i) => <Cloud key={i} />)} 
 			{Array.from({ length: 15}, (_, i) => <Cloud2 key={i} />)}
-			{Array.from({ length: 7}, (_, i) => <Cloud3 key={i} />)} 
-			{Array.from({ length: 5}, (_, i) => <Cloud4 key={i} />)} 
+			{Array.from({ length: 6}, (_, i) => <Cloud3 key={i} />)} 
+			{Array.from({ length: 3}, (_, i) => <Cloud4 key={i} />)} 
 			<Points />
 			{/* <DebugCamera /> */}
 			<ScrollCamera />

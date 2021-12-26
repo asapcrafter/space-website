@@ -25,6 +25,12 @@
           transform-origin: bottom left;
 }
 
+#card-wrapper .card-container .card-title:hover:after .card-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #card-wrapper .card-container .card-title:after {
   content: '';
   position: absolute;
@@ -41,5 +47,13 @@
   transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+#card-wrapper .card-container .card-description {
+  display: none;
+}
+
+#card-wrapper .card-container .card-link {
+  display: none;
 }
 /*# sourceMappingURL=projectcard.css.map */

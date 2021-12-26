@@ -23,21 +23,23 @@
     flex-direction: column;
     align-items: center;
     .card-container {
+        &:hover > div {
+            display: block;
+        }
         .card-title {
             display: inline-block;
             position: relative;
             &:hover:after {
                 @include underlineHover;
-            }
             &:after {
                 @include underlineAfter;
             }
         }
         .card-description {
-
+            display: none;
         }
         .card-link {
-
+            display: none;
         }
 
     }
