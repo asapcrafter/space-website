@@ -129,7 +129,7 @@
 }
 
 #about-wrapper {
-  margin-top: 20vh;
+  margin-top: 25vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,7 +148,7 @@
 }
 
 #about-wrapper #about-container {
-  padding-top: 15vh;
+  padding-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,12 +239,17 @@
   height: 70px;
 }
 
+#socials .social-logo {
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
 #socials :hover .social-logo {
   opacity: 1;
-  -webkit-transition: 0.55s;
-  transition: 0.55s;
-  -webkit-transform: translate(0em, -0.2em);
-          transform: translate(0em, -0.2em);
+  -webkit-transform: translate(0em, -0.3em);
+          transform: translate(0em, -0.3em);
+  -webkit-filter: opacity(0.65) drop-shadow(0 0 0 black);
+          filter: opacity(0.65) drop-shadow(0 0 0 black);
 }
 
 #footer-wrapper {

@@ -96,7 +96,7 @@ $space-blue: #668a93;
 }
 
 #about-wrapper {
-    margin-top: 20vh;
+    margin-top: 25vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ $space-blue: #668a93;
     font-family: futura-thin;
     align-items: center;
     #about-container {
-        padding-top: 15vh;
+        padding-top: 10vh;
         display: flex;
       flex-direction: column;
         justify-content: center;
@@ -164,10 +164,13 @@ $space-blue: #668a93;
     margin-top: 80px;
     gap: 50px;
     height: 70px;
+    .social-logo {
+        transition: 0.35s;
+    }
     :hover .social-logo {
         opacity: 1;
-        transition: 0.55s;
-        transform: translate(0em, -0.2em)
+        transform: translate(0em, -0.3em);
+        filter: opacity(0.65) drop-shadow(0 0 0 rgb(0, 0, 0));
       }
 }
 

@@ -23,7 +23,7 @@ const getRandomNumber = (min, max) => {
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 550
+	const count = 650
 
 	const positions = useMemo(() => {
 		let positions = []
