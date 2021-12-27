@@ -23,7 +23,7 @@ const getRandomNumber = (min, max) => {
 // Renders non-animated star objects in the scene
 const Points = () => {
 	const imgTexture = useLoader(THREE.TextureLoader, circleImage)
-	const count = 650
+	const count = 600
 
 	const positions = useMemo(() => {
 		let positions = []
@@ -31,7 +31,7 @@ const Points = () => {
 		// Position values are randomized
 		for (let i = 0; i < count; i++) {
 			const x = getRandomNumber(-260, 55) //Outward-inward
-			const y = getRandomNumber(-160, 160) //Down-up
+			const y = getRandomNumber(-160, 170) //Down-up
 			const z = getRandomNumber(-420, 420) //Left-right
 			positions.push(x, y, z)
 		}

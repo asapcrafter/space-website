@@ -98,7 +98,7 @@ const Home = () => {
 							]}
 							loop={Infinity}
 							/>
-						{/* <p>Welcome to my portfolio.</p> */}
+
 						<p>
 							I am a web developer with a passion for designing
 							polished and beautiful applications. My focus is on creating unique experiences and products using React, Canvas, and Javascript.
@@ -144,7 +144,7 @@ const Home = () => {
 					</div>
 				</div>
 				<div id="card-wrapper">
-					<div id="card-title">Projects</div>
+					{/* <div id="card-title">Projects</div>
 					<ProjectCard 
 						title='Shopping landing page'
 						description='Skincare landing page using react routers'
@@ -174,7 +174,7 @@ const Home = () => {
 						description='Exactly what you expect it do be'
 						gitLink='https://github.com/asapcrafter/tic-tac-toe'
 						liveLink='https://asapcrafter.github.io/tic-tac-toe/'
-					/>
+					/> */}
 					{/* <ProjectCard 
 						title=''
 						description=''
