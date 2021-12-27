@@ -7,10 +7,12 @@ const ProjectCard = (props) => {
     return (
         <div className='card-container'>
             <div className="card-title">{title}</div>
-            <div className="card-description">{description}</div>
-            <div className="card-link">
-                <a href={gitLink} target="_blank" rel="noopener noreferrer">Source Code</a>
-                <a href={liveLink} target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <div className="card-hidden">
+                <div className="card-description">{description}</div>
+                <div className="card-link">
+                    <a href={gitLink} target="_blank" rel="noopener noreferrer">Source Code</a>
+                    <a href={liveLink} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
             </div>
         </div>
     );

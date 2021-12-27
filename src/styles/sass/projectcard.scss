@@ -22,25 +22,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    #card-title {
+        margin-bottom: 10px;
+    }
     .card-container {
-        &:hover > div {
-            display: block;
+        margin-bottom: 15px;
+        &:hover .card-hidden {
+            max-height: 5000px;
+            transition: all 0.4s ease-in-out;
+            margin-bottom: 20px;
         }
         .card-title {
-            display: inline-block;
             position: relative;
+            display: inline-block;
+            text-align: center;
+            width: max-content;
             &:hover:after {
                 @include underlineHover;
+            }
             &:after {
                 @include underlineAfter;
             }
         }
-        .card-description {
-            display: none;
+        .card-hidden {
+            overflow: hidden;
+            max-height: 0;
+            padding-top: 10px;
+            .card-description {
+            }
+            .card-link {
+            }
         }
-        .card-link {
-            display: none;
-        }
-
     }
 }
