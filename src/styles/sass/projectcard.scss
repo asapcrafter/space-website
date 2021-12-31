@@ -22,36 +22,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 60vh;
     #card-title {
-        margin-bottom: 10px;
+        // Says 'projects'
+        margin-bottom: 20px;
+        font-size: 23px;
+        letter-spacing: 2.5px;
     }
     .card-container {
         margin-bottom: 15px;
+        font-family: space-grotesk;
         &:hover .card-hidden {
             max-height: 5000px;
-            transition: all 0.4s ease-in-out;
-            margin-bottom: 20px;
+            max-width: 5000px;
+            transition: 3.0s ;
         }
         .card-title {
-            position: relative;
-            display: inline-block;
             text-align: center;
-            width: max-content;
-            &:hover:after {
-                @include underlineHover;
-            }
-            &:after {
-                @include underlineAfter;
-            }
+            font-size: 18px;
         }
         .card-hidden {
+            transition: 1.1s;
             overflow: hidden;
             max-height: 0;
-            padding-top: 10px;
+            padding-top: 6px;
+            font-size: 15px;
             .card-description {
+                margin-bottom: 5px;
+                margin-top: 10px;
             }
             .card-link {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
             }
+
         }
     }
 }

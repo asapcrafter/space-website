@@ -3,6 +3,7 @@ import '../styles/css/home.css'
 import SpaceshipCanvas from './SpaceshipCanvas.js'
 import ProjectCard from './ProjectCard'
 import Typical from 'react-typical'
+
 const Home = () => {
 	// Scrolls to the About section on-click.
 	const handleScrollAbout = () => {
@@ -15,7 +16,7 @@ const Home = () => {
 
 	// Scrolls to the Work section on-click.
 	const handleScrollWork = () => {
-		document.getElementById('work-title').scrollIntoView({
+		document.getElementById('card-wrapper').scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',
 			inline: 'nearest'
@@ -98,7 +99,6 @@ const Home = () => {
 							]}
 							loop={Infinity}
 							/>
-
 						<p>
 							I am a web developer with a passion for designing
 							polished and beautiful applications. My focus is on creating unique experiences and products using React, Canvas, and Javascript.
@@ -127,24 +127,8 @@ const Home = () => {
 						<img className="social-logo" src="/assets/twitter.png" alt="twitter" width="50" height="50"/>
 					</a>
 				</div>
-				<div id='about-tools-title'>Technologies</div>
-					<div id='about-tools-container'>
-						<img className='tools-img' src="/assets/icons/html5.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/react2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/sass2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/node2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/firebase2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/github2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/git2.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/bash.png" title="Bash" alt=""/>
-						<img className='tools-img' src="/assets/icons/mapbox.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/threejs.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/vscode.png" title=""  alt=""/>
-						<img className='tools-img' src="/assets/icons/webgl.png" title="" alt=""/>
-					</div>
-				</div>
 				<div id="card-wrapper">
-					<div id="card-title">Projects</div>
+					<div id="card-title">PROJECTS</div>
 					<ProjectCard 
 						title='Shopping landing page'
 						description='Skincare landing page using react routers'
@@ -181,6 +165,22 @@ const Home = () => {
 						gitLink=''
 						liveLink=''
 					/> */}
+				</div>
+				<div id='about-tools-title'>TECHNOLOGIES</div>
+					<div id='about-tools-container'>
+						<img className='tools-img' src="/assets/icons/html5.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/react2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/sass2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/node2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/firebase2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/github2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/git2.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/bash.png" title="Bash" alt=""/>
+						<img className='tools-img' src="/assets/icons/mapbox.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/threejs.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/vscode.png" title=""  alt=""/>
+						<img className='tools-img' src="/assets/icons/webgl.png" title="" alt=""/>
+					</div>
 				</div>
 			</div>
 			<div id="footer-wrapper">
