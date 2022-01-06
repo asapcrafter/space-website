@@ -130,6 +130,12 @@ const Home = () => {
 				<div id="card-wrapper">
 					<div id="card-title">PROJECTS</div>
 					<ProjectCard 
+						title='Portfolio Website'
+						description='How I created this website using React and ThreeJS'
+						gitLink='https://github.com/asapcrafter/space-website'
+						liveLink='https://www.stephentrieu.com/'
+					/>
+					<ProjectCard 
 						title='Shopping landing page'
 						description='Skincare landing page using react routers'
 						gitLink='https://github.com/asapcrafter/shopping-cart'
