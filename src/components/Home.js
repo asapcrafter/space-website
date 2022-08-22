@@ -191,7 +191,7 @@ const Home = () => {
 			</div>
 			<div id="footer-wrapper">
 				<div id="footer-container">
-					<small>© {getYear()} Stephen Trieu. All Rights Reserved.</small>
+					<small>© {getYear()} Designed & Built by Stephen Trieu. All Rights Reserved.</small>
 				</div>
 			</div>
 		</div>
