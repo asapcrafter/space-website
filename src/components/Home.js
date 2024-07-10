@@ -106,7 +106,7 @@ const Home = () => {
 							in new areas such as 3D graphics using WebGL and ThreeJS.
 						</p>
 						<p>
-							Based in California, I am currently an undergrad at UC Santa Barbara. In my free time, I am always learning new technologies and finding new projects. You can check out some of these ideas down below!
+							After graduating from UC Santa Barbara, I am now based in Fremont CA as a software engineer. In my free time, I am always learning new technologies and finding new projects. You can check out some of these ideas down below!
 						</p>
 					</div>
 				{/* Icon link: https://www.flaticon.com/packs/social-media-171 */}
